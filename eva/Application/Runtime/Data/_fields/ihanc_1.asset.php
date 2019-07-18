@@ -1,0 +1,1 @@
+a:9:{i:0;s:7:"idasset";i:1;s:4:"bank";i:2;s:5:"stock";i:3;s:7:"mcredit";i:4;s:7:"scredit";i:5;s:7:"freight";i:6;s:4:"time";s:3:"_pk";s:7:"idasset";s:5:"_type";a:7:{s:7:"idasset";s:7:"int(11)";s:4:"bank";s:5:"float";s:5:"stock";s:5:"float";s:7:"mcredit";s:5:"float";s:7:"scredit";s:5:"float";s:7:"freight";s:5:"float";s:4:"time";s:10:"varchar(8)";}}

@@ -1,0 +1,31 @@
+<header>
+ <h2>支出科目一览表</h2> 
+ </header>
+  <section>
+    <table class="full"> 
+      <tbody>
+        <tr>
+         <volist name="sub_list_1" id="vo" mod="5" >
+		 <eq name="mod" value="0"></tr><tr></eq>
+			<td><font size="2" color="#899AAA"><a onclick="sub_name({$vo.idsubject})"  id={$vo.idsubject}>{$vo.subject}</a></font></td>
+				</volist>
+				</tr>
+                 </tbody> 
+                 </table> 
+            </section>
+<header>
+ <h2>收入科目一览表</h2> 
+ </header>
+  <section>
+    <table class="full"> 
+      <tbody>
+        <tr>
+         <volist name="sub_list_2" id="vo" mod="5" >
+		 <eq name="mod" value="0"></tr><tr></eq>
+			<td><font size="2" color="#899AAA"><a onclick="sub_name({$vo.idsubject})"  id={$vo.idsubject}>{$vo.subject}</a></font></td>
+				</volist>
+				</tr>
+                 </tbody> 
+                 </table> 
+            </section>
+            

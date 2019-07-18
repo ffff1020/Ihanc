@@ -1,0 +1,70 @@
+
+<script>
+$(":date").click(function(){
+	//alert();
+	$(this).dateinput();
+}); 
+
+$('#page a').click(function(){
+	var href=$(this).attr('href');
+	$.get(href, function(result){
+	    $("#bank_detail").html(result);
+	  });
+	return false;
+});
+function bankDetail(){
+	var sdate=$('#sdate').val();
+	var edate=$('#edate').val();
+	if(sdate&&edate){
+		var start=new Date(sdate.replace("-", "/").replace("-", "/"));   
+	    var end=new Date(edate.replace("-", "/").replace("-", "/"));  
+	    if(end<start){  
+	    	alert("结束日期必须大于开始日期!");
+	    	$('#sdate').val('');
+	    	$('#edate').val('');
+	        return;
+	    }  
+	/*  $.post("__URL__/bankDetail",{'sdate':sdate,'edate':edate,'idbank':$('#idbank').val()},function(result){
+		   $('#bank_detail').html(result);
+	   });*/
+	}else if($('#summary').val()==''){
+		return;
+	}
+	$.post("__URL__/bankDetail",{'sdate':sdate,'edate':edate,'idbank':$('#idbank').val(),'summary':$('#summary').val()},function(result){
+		   $('#bank_detail').html(result);
+	   });
+}
+</script>
+<p></p><input type="hidden" value={$idbank} id='idbank'/>
+<lable style="display:inline">开始时间:</lable><input type="date" id=sdate value='{$sdate}' style="display:inline"/>&nbsp;&nbsp;
+<lable style="display:inline">结束时间:</lable><input type="date" id=edate value='{$edate}'  style="display:inline"/>&nbsp;&nbsp;
+<lable style="display:inline">关键字:</lable><input type="text"  id='summary' value='{$summary}' style="display:inline"/>&nbsp;&nbsp;
+<button style="display:inline" onclick="bankDetail()">查询</button>
+<p></p>
+<table class="bordered" style="width:100%;font-size:13px;" id="bankDetail_tb" >
+<thead>
+<tr>
+<th>#</th>
+<th>交易时间</th>
+<th>交易金额</th>
+<th>余额</th>
+<th>操作人</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<volist name="bank_list" id="vo">
+<tr>
+<td>{$i}</td>
+<td>{$vo.time}</td>
+<td><if condition="($vo.sum lt 0) "> <font color='red'>￥{$vo.sum|number_format=2}元</font>
+<else /> ￥{$vo.sum|number_format=2}元
+</if></td>
+<td>￥{$vo.balance|number_format=2}元</td>
+<td>{$vo.user}</td>
+<td>{$vo.summary}</td>
+</tr>
+</volist>
+</tbody>
+</table>
+<div class="green-black" style="float:right;font-size:10px" id="page">{$page}</div>

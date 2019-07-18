@@ -1,0 +1,767 @@
+[ 2016-02-08T05:34:36+08:00 ] 66.249.73.206 /ihanc/eva/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000301s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000363s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+
+[ 2016-02-08T05:34:37+08:00 ] 66.249.73.188 /ihanc/eva/index.php/Home/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000300s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000341s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+NOTIC: [8] Undefined variable: info /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/97269d504bf33cb4c14eb7be85b7c9ec.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004391s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004426s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000113s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000142s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000357s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000390s ]
+
+[ 2016-02-08T18:10:47+08:00 ] 180.153.201.158 /ihanc/eva/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000020s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000258s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000347s ]
+
+[ 2016-02-08T18:10:47+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000025s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000360s ]
+
+[ 2016-02-08T18:10:47+08:00 ] 180.153.201.158 /ihanc/eva/index.php/Home/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000314s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000094s ]
+NOTIC: [8] Undefined variable: info /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/97269d504bf33cb4c14eb7be85b7c9ec.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004405s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004450s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000345s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000390s ]
+
+[ 2016-02-08T18:10:48+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000234s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000343s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+NOTIC: [8] Undefined variable: info /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/97269d504bf33cb4c14eb7be85b7c9ec.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004151s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004203s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000115s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000148s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000343s ]
+
+[ 2016-02-08T18:10:48+08:00 ] 112.65.193.16 /ihanc/eva/index.php/Home/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000374s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+NOTIC: [8] Undefined variable: info /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/97269d504bf33cb4c14eb7be85b7c9ec.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004341s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004377s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000317s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000353s ]
+
+[ 2016-02-08T18:10:49+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/login/undefined/ajax-loader-trans.gif
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+
+[ 2016-02-08T18:10:49+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/login/undefinedundefined
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000245s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000311s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+ERR: 非法操作:undefinedundefined
+
+[ 2016-02-08T18:10:50+08:00 ] 119.147.146.189 /ihanc/eva/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000310s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+
+[ 2016-02-08T18:10:50+08:00 ] 119.147.146.189 /ihanc/eva/index.php/Home/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000241s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000392s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000056s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+NOTIC: [8] Undefined variable: info /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/97269d504bf33cb4c14eb7be85b7c9ec.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004283s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004319s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000135s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000172s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000351s ]
+
+[ 2016-02-08T18:10:50+08:00 ] 119.147.146.189 /ihanc/eva/index.php/Home/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000223s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000350s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000052s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000091s ]
+NOTIC: [8] Undefined variable: info /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/97269d504bf33cb4c14eb7be85b7c9ec.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004117s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004151s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000101s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000127s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000351s ]
+
+[ 2016-02-08T18:10:56+08:00 ] 171.214.121.212 /ihanc/eva/index.php/home/login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000337s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000384s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000434s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE `name` = '李明强admin'  [ RunTime:0.0003s ]
+SQL: SELECT * FROM `user` WHERE `name` = '李明强admin' AND `pwd` = 'e10adc3949ba59abbe56e057f20f883e'  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `user_log` [ RunTime:0.0005s ]
+SQL: INSERT INTO `user_log` (`iduser`,`ltime`) VALUES ('5','2016-02-08 18:10:56') [ RunTime:0.0157s ]
+SQL: UPDATE `user` SET `ltime`='0.92035800 1454926256',`ip`='171.214.121.212' WHERE `iduser` = 5 [ RunTime:0.0021s ]
+
+[ 2016-02-08T18:10:56+08:00 ] 180.153.214.152 /ihanc/eva/index.php/home/login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000429s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+
+[ 2016-02-08T18:10:57+08:00 ] 180.153.214.152 /ihanc/eva/index.php/Home/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000232s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000054s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+NOTIC: [8] Undefined variable: info /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/97269d504bf33cb4c14eb7be85b7c9ec.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004189s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004223s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000102s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000323s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000357s ]
+
+[ 2016-02-08T18:10:57+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000342s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000389s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000197s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007699s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007780s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000346s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000389s ]
+
+[ 2016-02-08T18:10:58+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/index/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000247s ]
+
+[ 2016-02-08T18:10:58+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/index/dashboard
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000359s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000405s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0006s ]
+SQL: SELECT `time`,`idmember`,sum(sum) as sum FROM ihanc_4.sale GROUP BY idmember ORDER BY time LIMIT 0,10   [ RunTime:0.0026s ]
+SQL: SELECT `time`,`idmember`,sum(sum) as sum FROM ihanc_4.sale GROUP BY idmember ORDER BY sum desc LIMIT 0,10   [ RunTime:0.0022s ]
+SQL: SELECT `etime` FROM `user` WHERE `db` = '4' LIMIT 1   [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000088s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006260s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006302s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000113s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000142s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000365s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000415s ]
+
+[ 2016-02-08T18:11:03+08:00 ] 171.214.121.212 /ihanc/eva/index.php/home/sale/mcreditDetail?idmember=96
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000250s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000341s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0006s ]
+SQL: SELECT `idsale`,`idmember`,`inorder`,`idgoods`,`number`,`price`,`time`,`sum`,`cf`,`remark` FROM ihanc_4.sale WHERE `idmember` = 96 ORDER BY idsale  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: sum /opt/lampp/htdocs/ihanc/eva/Application/Home/Controller/SaleController.class.php 第 213 行.
+SQL: SHOW COLUMNS FROM `ihanc_4`.`bank` [ RunTime:0.0005s ]
+SQL: SELECT `idbank`,`bname` FROM ihanc_4.bank  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000082s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007051s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007087s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000150s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000351s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000390s ]
+
+[ 2016-02-08T18:11:03+08:00 ] 171.214.121.212 /ihanc/eva/index.php/home/sale/mcreditDetail?idmember=96
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000309s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000408s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0006s ]
+SQL: SELECT `idsale`,`idmember`,`inorder`,`idgoods`,`number`,`price`,`time`,`sum`,`cf`,`remark` FROM ihanc_4.sale WHERE `idmember` = 96 ORDER BY idsale  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: sum /opt/lampp/htdocs/ihanc/eva/Application/Home/Controller/SaleController.class.php 第 213 行.
+SQL: SHOW COLUMNS FROM `ihanc_4`.`bank` [ RunTime:0.0005s ]
+SQL: SELECT `idbank`,`bname` FROM ihanc_4.bank  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000087s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006649s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006703s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000160s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000343s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000375s ]
+
+[ 2016-02-08T18:11:03+08:00 ] 171.214.121.212 /ihanc/eva/index.php/home/sale/mcreditDetail?idmember=96
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000466s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0007s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0005s ]
+SQL: SELECT `idsale`,`idmember`,`inorder`,`idgoods`,`number`,`price`,`time`,`sum`,`cf`,`remark` FROM ihanc_4.sale WHERE `idmember` = 96 ORDER BY idsale  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: sum /opt/lampp/htdocs/ihanc/eva/Application/Home/Controller/SaleController.class.php 第 213 行.
+SQL: SHOW COLUMNS FROM `ihanc_4`.`bank` [ RunTime:0.0005s ]
+SQL: SELECT `idbank`,`bname` FROM ihanc_4.bank  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000050s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000109s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008186s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008229s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000379s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000413s ]
+
+[ 2016-02-08T18:11:24+08:00 ] 171.214.121.212 /ihanc/eva/index.php/home/sale/saleprint?idsale%5B%5D=1973&idsale%5B%5D=2004&idsale%5B%5D=2030&idsale%5B%5D=2037&idsale%5B%5D=2097&idsale%5B%5D=2098&idsale%5B%5D=2162&idsale%5B%5D=2179&idsale%5B%5D=2202&idsale%5B%5D=2272&idsale%5B%5D=2311&idsale%5B%5D=2321&idsale%5B%5D=2322&idsale%5B%5D=2332&idsale%5B%5D=2360&idsale%5B%5D=2367&idsale%5B%5D=2387&idsale%5B%5D=2412&idsale%5B%5D=2432&idsale%5B%5D=2440&idsale%5B%5D=2449&idsale%5B%5D=2502&idsale%5B%5D=1973&idsale%5B%5D=2004&idsale%5B%5D=2030&idsale%5B%5D=2037&idsale%5B%5D=2097&idsale%5B%5D=2098&idsale%5B%5D=2162&idsale%5B%5D=2179&idsale%5B%5D=2202&idsale%5B%5D=2272&idsale%5B%5D=2311&idsale%5B%5D=2321&idsale%5B%5D=2322&idsale%5B%5D=2332&idsale%5B%5D=2360&idsale%5B%5D=2367&idsale%5B%5D=2387&idsale%5B%5D=2412&idsale%5B%5D=2432&idsale%5B%5D=2440&idsale%5B%5D=2449&idsale%5B%5D=2502&idsale%5B%5D=1973&idsale%5B%5D=2004&idsale%5B%5D=2030&idsale%5B%5D=2037&idsale%5B%5D=2097&idsale%5B%5D=2098&idsale%5B%5D=2162&idsale%5B%5D=2179&idsale%5B%5D=2202&idsale%5B%5D=2272&idsale%5B%5D=2311&idsale%5B%5D=2321&idsale%5B%5D=2322&idsale%5B%5D=2332&idsale%5B%5D=2360&idsale%5B%5D=2367&idsale%5B%5D=2387&idsale%5B%5D=2412&idsale%5B%5D=2432&idsale%5B%5D=2440&idsale%5B%5D=2449&idsale%5B%5D=2502&idmember=96
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000418s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`info` [ RunTime:0.0006s ]
+SQL: SELECT * FROM ihanc_4.info WHERE `idinfo` = 1 LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0006s ]
+SQL: SELECT `price`,`number`,`sum`,`idgoods`,`time`,`cf` FROM ihanc_4.sale WHERE `idsale` IN ('1973','2004','2030','2037','2097','2098','2162','2179','2202','2272','2311','2321','2322','2332','2360','2367','2387','2412','2432','2440','2449','2502','1973','2004','2030','2037','2097','2098','2162','2179','2202','2272','2311','2321','2322','2332','2360','2367','2387','2412','2432','2440','2449','2502','1973','2004','2030','2037','2097','2098','2162','2179','2202','2272','2311','2321','2322','2332','2360','2367','2387','2412','2432','2440','2449','2502')  [ RunTime:0.0005s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`member` [ RunTime:0.0006s ]
+SQL: SELECT `mname` FROM ihanc_4.member WHERE `idmember` = 96 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000092s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000135s ]
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+NOTIC: [8] Undefined index: finish /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/19394307bbec93e777241c9dbb339379.php 第 107 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006784s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006816s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000153s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000353s ]
+
+[ 2016-02-08T18:11:58+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/sale/sale.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000394s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`bank` [ RunTime:0.0006s ]
+SQL: SELECT `idbank`,`bname` FROM ihanc_4.bank  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000108s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000145s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006559s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006602s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000140s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000325s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000362s ]
+
+[ 2016-02-08T18:12:01+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/sale/mcredit.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000379s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0006s ]
+SQL: SELECT SUM(sum) AS tp_sum FROM ihanc_4.sale LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: p /opt/lampp/htdocs/ihanc/eva/Application/Home/Controller/SaleController.class.php 第 466 行.
+SQL: SELECT count(distinct idmember) as count FROM ihanc_4.sale LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [2] Missing argument 2 for specialpage(), called in /opt/lampp/htdocs/ihanc/eva/Application/Home/Controller/SaleController.class.php on line 469 and defined /opt/lampp/htdocs/ihanc/eva/Application/Home/Common/function.php 第 103 行.
+NOTIC: [8] Undefined variable: params /opt/lampp/htdocs/ihanc/eva/Application/Home/Common/function.php 第 115 行.
+NOTIC: [2] Invalid argument supplied for foreach() /opt/lampp/htdocs/ihanc/eva/Application/Home/Common/function.php 第 115 行.
+SQL: SELECT sale.idmember,sum(sale.sum) as sum,member.mname FROM ihanc_4.sale left JOIN ihanc_4.member ON sale.idmember= member.idmember  GROUP BY sale.idmember LIMIT 0,10   [ RunTime:0.0014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004836s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004881s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000112s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000371s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000404s ]
+
+[ 2016-02-08T18:12:05+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/sale/sale.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000290s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000347s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000393s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`bank` [ RunTime:0.0005s ]
+SQL: SELECT `idbank`,`bname` FROM ihanc_4.bank  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000150s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006507s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006547s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000117s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000321s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000358s ]
+
+[ 2016-02-08T18:12:08+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/Sale/searchMember
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000305s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000384s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`member` [ RunTime:0.0006s ]
+SQL: SELECT `idmember`,`mname` FROM ihanc_4.member WHERE ( `mname` LIKE '%x%' OR `msn` LIKE '%x%' ) LIMIT 0,10   [ RunTime:0.0002s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000381s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000424s ]
+
+[ 2016-02-08T18:12:09+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/Sale/searchMember
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000372s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`member` [ RunTime:0.0005s ]
+SQL: SELECT `idmember`,`mname` FROM ihanc_4.member WHERE ( `mname` LIKE '%xj%' OR `msn` LIKE '%xj%' ) LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000380s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000421s ]
+
+[ 2016-02-08T18:12:12+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/Sale/getCredit?idmember=96
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000391s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0006s ]
+SQL: SELECT SUM(sum) AS tp_sum FROM ihanc_4.sale WHERE `idmember` = 96 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000418s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000460s ]
+
+[ 2016-02-08T18:12:15+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/Sale/mcreditDetail?idmember=96
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000293s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000344s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000388s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0006s ]
+SQL: SELECT `idsale`,`idmember`,`inorder`,`idgoods`,`number`,`price`,`time`,`sum`,`cf`,`remark` FROM ihanc_4.sale WHERE `idmember` = 96 ORDER BY idsale  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: sum /opt/lampp/htdocs/ihanc/eva/Application/Home/Controller/SaleController.class.php 第 213 行.
+SQL: SHOW COLUMNS FROM `ihanc_4`.`bank` [ RunTime:0.0005s ]
+SQL: SELECT `idbank`,`bname` FROM ihanc_4.bank  [ RunTime:0.0001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006324s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006368s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000110s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000138s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000341s ]
+
+[ 2016-02-08T18:12:15+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/Sale/mcreditDetail?idmember=96
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000238s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000319s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0006s ]
+SQL: SELECT `idsale`,`idmember`,`inorder`,`idgoods`,`number`,`price`,`time`,`sum`,`cf`,`remark` FROM ihanc_4.sale WHERE `idmember` = 96 ORDER BY idsale  [ RunTime:0.0006s ]
+NOTIC: [8] Undefined variable: sum /opt/lampp/htdocs/ihanc/eva/Application/Home/Controller/SaleController.class.php 第 213 行.
+SQL: SHOW COLUMNS FROM `ihanc_4`.`bank` [ RunTime:0.0006s ]
+SQL: SELECT `idbank`,`bname` FROM ihanc_4.bank  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006750s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006787s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000103s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000129s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000314s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000354s ]
+
+[ 2016-02-08T18:12:15+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/Sale/mcreditDetail?idmember=96
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000360s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000397s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0006s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0005s ]
+SQL: SELECT `idsale`,`idmember`,`inorder`,`idgoods`,`number`,`price`,`time`,`sum`,`cf`,`remark` FROM ihanc_4.sale WHERE `idmember` = 96 ORDER BY idsale  [ RunTime:0.0007s ]
+NOTIC: [8] Undefined variable: sum /opt/lampp/htdocs/ihanc/eva/Application/Home/Controller/SaleController.class.php 第 213 行.
+SQL: SHOW COLUMNS FROM `ihanc_4`.`bank` [ RunTime:0.0005s ]
+SQL: SELECT `idbank`,`bname` FROM ihanc_4.bank  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000086s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006479s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006520s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000111s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000139s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000377s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000413s ]
+
+[ 2016-02-08T18:12:22+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/Sale/mcreditPayment
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000349s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`bank_detail` [ RunTime:0.0005s ]
+SQL: SELECT SUM(sum) AS tp_sum FROM ihanc_4.sale WHERE `idsale` IN ('1973','2004','2030','2037','2097','2098','2162','2179','2202','2272','2311','2321','2322','2332','2360','2367','2387','2412','2432','2440','2449','2502','1973','2004','2030','2037','2097','2098','2162','2179','2202','2272','2311','2321','2322','2332','2360','2367','2387','2412','2432','2440','2449','2502','1973','2004','2030','2037','2097','2098','2162','2179','2202','2272','2311','2321','2322','2332','2360','2367','2387','2412','2432','2440','2449','2502') AND `idmember` = 96 LIMIT 1   [ RunTime:0.0003s ]
+SQL: INSERT INTO ihanc_4.sale (`user`,`time`,`sum`,`idmember`) VALUES ('李明强','2016-02-08 18:12:22','-43107','96') [ RunTime:0.0032s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`bank` [ RunTime:0.0014s ]
+SQL: SELECT `sum` FROM ihanc_4.bank WHERE `idbank` = 9 LIMIT 1   [ RunTime:0.0002s ]
+SQL: INSERT INTO ihanc_4.bank_detail (`user`,`time`,`sum`,`idbank`,`balance`,`summary`) VALUES ('李明强','2016-02-08 18:12:22','43107','9','248060','客户逐笔付款:许基权') [ RunTime:0.0040s ]
+SQL: DELETE FROM ihanc_4.sale WHERE ( idsale=2529 ) [ RunTime:0.0035s ]
+SQL: DELETE FROM ihanc_4.sale WHERE `idsale` IN ('1973','2004','2030','2037','2097','2098','2162','2179','2202','2272','2311','2321','2322','2332','2360','2367','2387','2412','2432','2440','2449','2502','1973','2004','2030','2037','2097','2098','2162','2179','2202','2272','2311','2321','2322','2332','2360','2367','2387','2412','2432','2440','2449','2502','1973','2004','2030','2037','2097','2098','2162','2179','2202','2272','2311','2321','2322','2332','2360','2367','2387','2412','2432','2440','2449','2502') AND `idmember` = 96 [ RunTime:0.0034s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`log` [ RunTime:0.0006s ]
+SQL: INSERT INTO ihanc_4.log (`summary`,`user`) VALUES ('客户逐笔付款许基权,金额:￥43107','李明强') [ RunTime:0.0023s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000415s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000453s ]
+
+[ 2016-02-08T18:12:22+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/Sale/getCredit?idmember=96
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000035s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000327s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000373s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0006s ]
+SQL: SELECT SUM(sum) AS tp_sum FROM ihanc_4.sale WHERE `idmember` = 96 LIMIT 1   [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000387s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000426s ]
+
+[ 2016-02-08T18:12:37+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/finance/bank
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000369s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000416s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`bank` [ RunTime:0.0006s ]
+SQL: SELECT * FROM ihanc_4.bank  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000058s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005881s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005926s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000118s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000154s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000396s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000433s ]
+
+[ 2016-02-08T18:13:12+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/statistics/asset
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000261s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000313s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000358s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0010s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`asset` [ RunTime:0.0007s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`stock_sum_view` [ RunTime:0.0009s ]
+SQL: SELECT SUM(sum) AS tp_sum FROM ihanc_4.stock_sum_view LIMIT 1   [ RunTime:0.0019s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`bank` [ RunTime:0.0005s ]
+SQL: SELECT SUM(sum) AS tp_sum FROM ihanc_4.bank LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`sale` [ RunTime:0.0006s ]
+SQL: SELECT SUM(sum) AS tp_sum FROM ihanc_4.sale LIMIT 1   [ RunTime:0.0003s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`purchase` [ RunTime:0.0005s ]
+SQL: SELECT SUM(sum) AS tp_sum FROM ihanc_4.purchase LIMIT 1   [ RunTime:0.0001s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`freight` [ RunTime:0.0005s ]
+SQL: SELECT SUM(freight) AS tp_sum FROM ihanc_4.freight WHERE ( status=0 ) LIMIT 1   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004389s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004422s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000109s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000135s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000335s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000367s ]
+
+[ 2016-02-08T18:13:12+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/Statistics/mytest
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000341s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0008s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`asset` [ RunTime:0.0005s ]
+SQL: SELECT * FROM ihanc_4.asset ORDER BY idasset desc LIMIT 0,13   [ RunTime:0.0003s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000379s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000414s ]
+
+[ 2016-02-08T18:13:57+08:00 ] 101.226.66.21 /ihanc/eva/index.php/Home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000315s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+
+[ 2016-02-08T18:13:57+08:00 ] 101.226.66.21 /ihanc/eva/index.php/Home/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000352s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000092s ]
+NOTIC: [8] Undefined variable: info /opt/lampp/htdocs/ihanc/eva/Application/Runtime/Cache/Home/97269d504bf33cb4c14eb7be85b7c9ec.php 第 75 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004148s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004182s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000103s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000131s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000315s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000348s ]
+
+[ 2016-02-08T18:13:57+08:00 ] 171.214.121.212 /ihanc/eva/index.php/Home/stock/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000284s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+SQL: SHOW COLUMNS FROM `user` [ RunTime:0.0009s ]
+SQL: SELECT * FROM `user` WHERE ( iduser='5' )  [ RunTime:0.0002s ]
+SQL: SHOW COLUMNS FROM `ihanc_4`.`stock` [ RunTime:0.0006s ]
+SQL: SELECT * FROM ihanc_4.stock  [ RunTime:0.0002s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000079s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005079s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005127s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000114s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000142s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000467s ]
+

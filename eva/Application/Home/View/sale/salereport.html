@@ -1,0 +1,62 @@
+<script>
+$("#sale_report_table tbody tr").click(function(){
+	var strHtml="<div id='dingwei'><img src='__IMG__/ajax-loader-trans.gif'>&nbsp;&nbsp;加载中...</div>";
+	$('body').append(strHtml);
+	var divhtml="<div id='sale_table'></div>";  
+	$('#main-content').append(divhtml);              
+	var title=$(this).find("td:nth-child(1)").text()+"今日销售明细单";
+	$.get("__URL__/saleTable",
+		{'idgoods':$(this).attr('id')},
+		function(result){
+			$('#dingwei').remove();
+			$('#sale_table').html(result);
+			$('#sale_table').dialog({
+				 width:700,
+				 maxHeight:700,
+				 title:title,
+				 modal: true,
+			     close: function () { $(this).remove(); },// html('');
+			     buttons: {
+			    	 "取消": function() { $(this).remove();},
+			      },
+			});
+	});
+});
+</script>
+
+<table class="bordered" style="width:100%;font-size:12px" id="sale_report_table" > 
+<thead>
+<tr>
+<th>商品名称</th>
+<th>赊出数量</th>
+<th>赊出金额</th>
+<th>销售数量合计</th>
+<th>销售金额合计</th>
+</tr>
+</thead>
+<tbody>
+<volist name="sinfo" id="vo">
+<if condition="$vo.idgoods gt 0">
+<tr id={$vo.idgoods} title="点击查看{$vo.gname}销售信息">
+<td>{$vo.gname}</td>
+<td><?php echo (number_format($vo['cnum'],2)); ?></td>
+<td>￥<?php echo (number_format($vo['csum'])); ?></td>
+<assign name="paid" value="$paid+$vo['sum']-$vo['csum']"/>
+<td><?php echo (number_format($vo['number'],2)); ?></td>
+<td>￥<?php echo (number_format($vo['sum'])); ?></td>
+</tr>
+</if>
+</volist>
+</tbody>
+<tr>
+
+<td>已收总金额:<font color="red">￥{$cash|number_format}</font></td>
+<td>已收欠款:<font color="blue">￥{$cash-$paid|number_format}</font></td>
+<td>现金付款:<font color="blue">￥{$paid|number_format}</font></td>
+<td>合计数量:{$ttl_num|number_format}</td>
+<td>营业额:￥{$ttl_sum|number_format}</td>
+</tr>
+
+
+
+</table>

@@ -1,0 +1,92 @@
+
+<section class="portlet grid_12 leading"> 
+                        <header>
+                            <h2>{$info}</h2>
+                        </header>
+                        <section >
+                            <table class="full" style="font-size:12px;width:90%">
+                                <tbody> 
+                             
+ 								<volist name="sale_report" id="vo">
+ 								<tr>
+ 								<td id={$vo.idgoods}><a onclick='compare({$vo.idgoods})'>{$vo.gname}</a>平均价格:￥{$vo.price}</td>
+ 								<td style="width:70%"><div  class="progress"><span style="width:{$vo.percent}%;"><b>{$vo.percent}%</b></span></div></td> 
+                                <td style="width:60px" class="ar">{$vo.number|number_format}/{$ttl}</td>
+ 								</tr>
+ 								</volist>
+                                </tbody> 
+ 
+                            </table>
+                        </section></section> 
+              
+ <script>
+
+ function compare(idgoods){
+	// alert( $('#goods').length);
+	 $('#goods').length && $('#goods').remove();
+	 var html='<div id="goods" ><fieldset><div id="chart2" style="width:60%;">haha</div></fieldset></div>';
+	 $('body').append(html);
+	// $('#chart2').empty();   
+	 var ticks=new Array();
+     var number = new Array();
+     var ymax=0;
+	 $.get("__URL__/compare",{'idgoods':idgoods},function(result){
+		    var data=$.parseJSON(result);
+		   // len=data.number.length;
+		    for (var i = 0; i < 13; i++) {
+		    	if(data.number[i]){
+		    	number.push(parseInt(data.number[i]));
+		    //	if(parseInt(data.number[i])>ymax) ymax=data.number[i];
+		    	ticks.push(data.ticks[i]);
+		    	}else
+		    		ticks.push(i);
+		    }
+
+		    var title=$('#'+idgoods).find('a').html()+"--销量统计图表";
+		    $('#chart2').highcharts({
+		        title: {
+		            text: title,
+		            x: -20 //center
+		        },
+		        
+		        xAxis: {
+		            categories: ticks
+		        },
+		        yAxis: {
+		            title: {
+		                text: '月销售数量 (斤)'
+		            },
+		            plotLines: [{
+		                value: 0,
+		                width: 1,
+		                color: '#808080'
+		            }]
+		        },
+		        tooltip: {
+		            valueSuffix: '斤'
+		        },
+		       
+		        series: [{
+		            name: $('#'+idgoods).find('a').html(),
+		            data: number
+		        }]
+		    });
+		    
+		    
+		    $('#goods').dialog({
+				 width:800,
+				 maxHeight:600,
+				 title:title,
+				 modal: true,
+				 close:function(){$(this).remove();},
+			     buttons: {
+			    	 "关闭": function() { $(this).dialog( "close" ); },
+			        
+			      },
+			});
+		});
+	
+ }
+
+
+ </script>
