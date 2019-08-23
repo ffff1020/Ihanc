@@ -1,1 +1,0 @@
-a:6:{i:0;s:10:"iduser_log";i:1;s:6:"iduser";i:2;s:5:"otime";i:3;s:5:"ltime";s:3:"_pk";s:10:"iduser_log";s:5:"_type";a:4:{s:10:"iduser_log";s:7:"int(11)";s:6:"iduser";s:7:"int(11)";s:5:"otime";s:8:"datetime";s:5:"ltime";s:8:"datetime";}}
