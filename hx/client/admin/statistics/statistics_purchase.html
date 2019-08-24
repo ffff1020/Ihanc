@@ -1,0 +1,92 @@
+<div class="wrapper-md" ng-controller="StatisticspurchaseController">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            进货统计
+        </div>
+        <div class="row wrapper">
+            <div class="col-sm-3">
+                <label >开始日期</label>
+                <date-directive  dt="sdate"></date-directive>
+            </div>
+            <div class="col-sm-3 ">
+                <label >结束日期</label>
+                <date-directive  dt="edate"></date-directive>
+            </div>
+            <div class="col-sm-6 " style="padding-top: 20px;">
+                <label > 供应商:</label>
+                <ui-select ng-model="data.supply" on-select="mySelect()" class="inline" style="width:160px" >
+                    <ui-select-match allow-clear="true">{{$select.selected.supply_name}}
+                        <a  aria-label="Select box clear" style="padding-right: 0;"  class="btn btn-xs btn-link pull-right">
+                            <i class="glyphicon glyphicon-remove" aria-hidden="true" style="top: 2px;" ng-click="clear()"></i>
+                        </a>
+                    </ui-select-match>
+                    <ui-select-choices repeat="supply in supplys"
+                                       refresh="query_supply($select.search)"
+                                       refresh-delay="0">
+                        <div ng-bind-html="supply.supply_name"></div>
+                    </ui-select-choices>
+                </ui-select>&nbsp;
+                <button class="btn m-b-xs w-xs btn-success" ng-click="queryGrid()">统计查询</button>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading " style="text-align: center">
+                {{myTime}}<a style="color: crimson;font-size: 20px">{{data.supply.supply_name}}</a>进货统计<a ng-if="sum>0">{{sum|currency:"￥"}}</a>
+            </div>
+            <div class="col-md-7 pull-right">
+                <div class="panel wrapper">
+                    <h5 class="font-thin m-t-none m-b text-muted"></h5>
+                    <div ui-jq="plot"  ui-refresh="showPlot" ui-options="
+              [
+                { data: {{d0_1}}, label:'总数量', points: { show: true, radius: 1} },
+                { data: {{d0_2}}, label:'进货总金额', points: { show: true, radius: 1},yaxis: 2}
+              ],
+              {
+                colors: ['{{app.color.info}}', '{{app.color.primary}}','{{app.color.success}}'],
+                series: { shadowSize: 3 },
+                bars: { show: true, barWidth: 0.3,order: 1, fillColor: { colors: [{ opacity: 0.2 }, { opacity: 0.4}] } },
+                xaxis:{
+                     font: { color: '#a1a7ac' },
+                     ticks: {{time}}
+                     },
+                yaxis: {show:false},
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },
+                tooltip: true,
+                tooltipOpts: { content: '%x %s %y.2',  defaultTheme: false, shifts: { x: 0, y: 20 } },
+              }
+            " style="height:200px" >
+
+                    </div>
+                </div>
+                <div class="panel wrapper">
+                    <h5 class="font-thin m-t-none m-b text-muted">{{item[0].goods_name}}{{wait}}</h5>
+                    <div ui-jq="plot" ui-refresh="showSpline" ui-options="
+              [
+                { data: {{d1_1}}, label:'进货数量', points: { show: true, radius: 3}, splines:  { show: true, tension: 0.45, lineWidth: 2, fill: 0 }},
+                { data: {{d1_2}}, label:'进货金额', points: { show: true, radius: 1}, splines: { show: true, tension: 0.45, lineWidth: 2, fill: 0 },yaxis: 2},
+              ],
+              {
+                colors: ['{{app.color.info}}', '{{app.color.primary}}','{{app.color.success}}'],
+                series: { shadowSize: 3 },
+                xaxis:{
+                     font: { color: '#a1a7ac' },
+                     ticks: {{time}}
+                     },
+                yaxis: {show:false},
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },
+                tooltip: true,
+                tooltipOpts: { content: '%x %s %y.2',  defaultTheme: false, shifts: { x: 0, y: 20 } },
+              }
+            " style="height:200px" >
+
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div ng-grid="gridOptions" style="height: 550px"></div>
+            </div>
+        </div>
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'position-class': 'toast-center', 'close-button':true}"></toaster-container>
+        <!-- / toaster directive -->
+    </div>

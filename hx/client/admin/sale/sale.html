@@ -1,0 +1,37 @@
+<div ng-controller="SaleTabController">
+    <div class="row wrapper">
+        <div class="col-sm-6">
+            <label style="padding-left: 2%"> 客户:</label>
+            <ui-select ng-model="data.member" on-select="getCredit($item)"  class="inline" style="width:160px" id="member">
+                <ui-select-match >{{$select.selected.member_name}}</ui-select-match>
+                <ui-select-choices repeat="member in members"
+                                   refresh="query_member($select.search)"
+                                   refresh-delay="0">
+                    <div ng-bind-html="member.member_name"></div>
+                </ui-select-choices>
+            </ui-select>&nbsp;
+            <input type="checkbox"  ng-model="modifyMember">更改客户
+            <a style="color: orangered" ng-if="credit||credit===0" ng-click="more()">欠款：{{credit|currency:'￥'}}</a>
+        </div>
+        <div class="col-sm-3">
+            <div class="btn-group" style="display: inline">
+                <label class="btn btn-info" ng-click="setStoreID()"  ng-repeat="store in stores" ng-model="$parent.storeId" btn-radio="store.store_id">{{store.store_name}}</label>
+            </div>
+        </div>
+        <div class="col-sm-3 m-b-xs pull-right ">
+            <button class="btn m-b-xs btn-sm btn-primary btn-addon" ng-click="memberDialog()"><i class="fa fa-plus"></i>新增客户   </button>
+        </div>
+    </div>
+<tabset class="tab-container" ng-show="mytabs.length>0">
+    <tab ng-repeat="tab in mytabs" active="tab.active" ng-dblclick="closeTab($index,true)">
+        <tab-heading ng-style="tab.mystyle">
+            {{tab.title}}{{mystyle}}
+        </tab-heading>
+        <div ng-include="'admin/sale/template.html'"></div>
+        </p>
+    </tab>
+</tabset>
+</div>
+<!-- toaster directive -->
+<toaster-container toaster-options="{'position-class': 'toast-center', 'close-button':true}"></toaster-container>
+<!-- / toaster directive -->

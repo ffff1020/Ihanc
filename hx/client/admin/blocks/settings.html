@@ -1,0 +1,24 @@
+<!-- settings -->
+
+  <button  class="btn btn-default no-shadow pos-abt" ui-toggle-class="active" target=".settings" ng-click="test()">
+    <i class="fa fa-spin fa-gear"></i>
+  </button>
+<div ng-controller="OrderController">
+  <div class="panel-heading">
+    订单列表
+  </div>
+  <div class="panel-body"> 
+    <div class="m-b-sm" ng-repeat="list in lists" ng-if="show">
+      <i class="fa fa-minus-circle pull-right" ng-click="delOrder(list)"></i>
+      <a ng-click="loadOrder(list)">
+      <label class="pull-right">
+           {{list.time|limitTo:10}}
+      </label>
+        {{list.member_name}}
+      </a>
+
+    </div>
+    <div ng-if="!show">载入中...</div>
+  </div>
+</div>
+<!-- /settings -->

@@ -1,0 +1,29 @@
+<div ng-if="printTime==''">加载中...</div>
+<div ng-if="printTime!=''">打印日期:{{printTime}}</div>
+<div ng-repeat="item in data" on-finish-render>
+    <div>{{item.member_name}}--{{item.sum|currency:'￥'}}</div>
+    <div  ng-repeat="detail in item.detail track by $index" ng-class="{'inline':detail.time==item.detail[$index+1].time||(detail.time!=item.detail[$index+1].time&&detail.time==item.detail[$index-1].time)}">&nbsp;&nbsp;
+        <div class="inline" ><b ng-if="($index==0)||($index>0 && detail.time!=item.detail[$index-1].time)">{{detail.time|limitTo:10}}</b>
+        <div  class="inline" ng-if="detail.type=='S'||detail.type=='B'">
+            {{detail.goods_name}}{{detail.remark}}:{{detail.number}}{{detail.unit_name}}*{{detail.price}}={{detail.sum|currency:'￥'}}
+        </div>
+        <div  class="inline" ng-if="detail.type=='CF'">
+            结转余额:{{detail.ttl|currency:'￥'}}
+        </div>
+        <div class="inline"  ng-if="detail.type=='Init'">
+            初期录入:{{detail.ttl|currency:'￥'}}
+        </div>
+        <div class="inline"  ng-if="detail.type=='P'">
+            客户付款:{{detail.ttl|currency:'￥'}}
+        </div>
+        <div class="inline"  ng-if="detail.type=='backFlush'">
+            反冲生成已付款:{{detail.ttl|currency:'￥'}}
+        </div>
+        <div class="inline" ng-if="detail.type=='income'||detail.type=='cost'">
+            {{detail.summary|myfilter}}:{{detail.ttl|currency:'￥'}}
+        </div>
+        </div>
+
+    </div>
+    <div>&nbsp;</div>
+</div>

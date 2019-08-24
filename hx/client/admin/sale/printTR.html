@@ -1,0 +1,15 @@
+<td >
+    <div ng-show="credit.time!=page[$index-1].time" style="font-size: smaller">{{credit.time|limitTo:10|limitTo:-5}}
+    </div>
+</td>
+<td class="printFont"  >
+    {{credit.goods_name}}<a ng-if="credit.remark">:{{credit.remark}}</a>
+    {{credit.type=='Init'?'初期录入应收款':''}}
+    {{(credit.type=='P'?'客户付款':'')}}
+    {{credit.type=='income'?'收入条目':''}}
+    {{credit.type=='cost'?'支出条目':''}}
+    {{credit.type=='CF'?'结转余额':''}}
+</td>
+<td >{{credit.number|number:1}}{{credit.unit}}</td>
+<td >{{credit.price|currency:'￥':1}}</td>
+<td >{{(credit.type==='S'||credit.type==='B')?(credit.sum|currency:'￥':0):(credit.ttl|currency:'￥':0)}}</td>

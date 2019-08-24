@@ -1,0 +1,106 @@
+<div class=" table-responsive" ng-controller="SaleController">
+    <table class="table table-striped b-t b-light" id="{{tIndex}}">
+        <thead>
+        <tr>
+            <th>操作</th>
+            <th>商品名称</th>
+            <th>数量&nbsp;&nbsp;&nbsp;<b>录入毛重:<input type="checkbox" ng-model="show_numbers"></b></th>
+            <th>单位</th>
+            <th>销售价格</th>
+            <th>金额</th>
+            <th>备注</th>
+            <th>仓库</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in rows track by $index" >
+            <td><i class="fa fa-trash-o text-error" ng-click="delRow($index)"></i>&nbsp;&nbsp;<i class="icon-plus text-info" ng-click="addRow()"></i></td>
+            <td>
+                <ui-select ng-model="rows[$index].good" on-select="getUnit($item,$index)"  class="inline" style="width:160px" >
+                    <ui-select-match >{{$select.selected.goods_name}}</ui-select-match>
+                    <ui-select-choices repeat="good in goods "
+                                       refresh="query_goods($select.search)"
+                                       refresh-delay="0"
+                                       minimum-input-length="1"
+                                       position="auto">
+                        <div ng-bind-html="good.goods_name"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </td>
+            <td>
+                <input type="number"  ng-show="show_numbers" string-to-number ng-model="row.number1" style="width:80px"  ng-change="cal_numbers($index)" />
+                <input type="number"  ng-show="show_numbers" string-to-number ng-model="row.number2" style="width:80px" ng-change="cal_numbers($index)" />
+                <input type="number" id="{{tIndex}}number{{$index}}" string-to-number ng-model="row.number" style="width:80px" ng-change="cal($index)" ng-keypress="next($event,$index)" />
+                <b ng-if="row.check==1" class="badge bg-success">{{row.info}}</b>
+                <b ng-if="row.check==0" class="badge bg-warning">{{row.info}}</b>
+                <b ng-if="row.check==-1" class="badge bg-danger">{{row.info}}</b>
+            </td>
+            <td>
+                <ui-select ng-model="rows[$index].unit" on-select="getPrice($item,$index)"  class="inline" style="width:80px">
+                <ui-select-match >{{$select.selected.unit_name}}</ui-select-match>
+                <ui-select-choices repeat="unit in rows[$index].units">
+                    <div ng-bind-html="unit.unit_name"></div>
+                </ui-select-choices>
+            </ui-select>
+            </td>
+            <td><input type="number"  ng-model="row.price" string-to-number style="width:80px" ng-keypress="next($event,$index)" ng-change="cal($index)"></td>
+            <td><input type="number" ng-model="row.sum" style="width:80px" ng-change="cal_sum($index)" ng-keypress="next($event,$index)"></td>
+
+            <td>
+                <input  ng-model="row.remark"  ng-keypress="next($event,$index)">
+            </td>
+            <td>
+                <select class="form-control"  ng-model="row.store_id" ng-options="store.store_id as store.store_name  for store in stores" ng-change="getStock($index)">
+                </select>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="2" align="right">合计数量：</td><td>{{ttl_number|number:2}}</td>
+            <td align="right">合计金额：</td><td>{{data.ttl_sum| currency:"￥ "}}元</td>
+            <TD></TD><TD></TD>
+        </tr>
+        </tfoot>
+    </table>
+    <hr style=" height:2px;border:none;border-top:2px dotted #185598;" />
+    <div class="inline col-sm-3">
+        <div class=" text-left">
+            <label>收款银行：</label>
+            <select ng-model="pay.bank">
+                <option ng-repeat="bank in banks" value="{{bank.bank_id}}">{{bank.bank_name}}</option>
+            </select>
+        </div>
+        <div class="text-left">
+            <label>收款金额：</label>
+            <input type="number" ng-model="pay.paid_sum" id="{{tIndex}}paid_sum" ng-keypress="next($event,-1)">
+        </div>
+        <div class="text-left inline">
+            <label>销售日期：</label>
+            <date-directive  dt="data.time" ></date-directive>
+        </div>
+    </div>
+    <div class="col-sm-3" >
+        <div>备注：</div>
+        <textarea class="form-control" rows="2" ng-model="data.summary"></textarea>
+    </div><div class="inline col-sm-1"></div>
+    <div class="inline col-sm-5">
+        <div> <input  type="checkbox" ng-change="smallChange()" ng-model="data.smallChange" >抹零</div>
+        <button class="btn m-b-xs w-xs btn-success" ng-click="save(1)" ng-disabled="check">{{!check?'保存销售':'保存中..'}}</button>
+        <button class="btn m-b-xs w-xs btn-info" ng-click="save(-1)"  ng-disabled="check">{{!check?'退货':'保存中..'}}</button>
+        <button class="btn m-b-xs w-xs btn-danger" ng-click="order()" ng-disabled="check">{{!check?"保存订单":"保存中..."}}</button>
+        <div class="btn-group dropup" dropdown style="margin-top: -28px">
+            <div> <input  type="checkbox"  ng-model="memberInfo" >客户信息</div>
+            <button type="button" class="btn btn-primary"  ng-click="print(true)"  ng-disabled="check">{{!check?'打印':'保存中..'}}</button>
+            <button type="button" class="btn btn-primary dropdown-toggle" dropdown-toggle>
+                <span class="caret"></span>
+                <span class="sr-only">Split button!</span>
+            </button>
+            <ul class="dropdown-menu " role="menu">
+                <li><a ng-click="myPrint('number')">数量</a></li>
+                <li><a ng-click="myPrint('price')" >价格</a></li>
+                <li><a ng-click="print(false)" >打印草稿</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

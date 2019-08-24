@@ -1,0 +1,68 @@
+<div class="wrapper-md" ng-controller="SettingStockController">
+    <div >
+        <div class="btn-group" style="text-align: center" >
+            <label class="btn btn-primary" ng-click="setStoreID()"  ng-repeat="store in stores" ng-model="$parent.storeId" btn-radio="store.store_id">{{store.store_name}}</label>
+        </div>
+    </div>
+    <div class="panel panel-default">
+<div class=" table-responsive" >
+    <table class="table table-striped b-t b-light" id="purchaseTable">
+        <thead>
+        <tr>
+            <th>操作</th>
+            <th>商品名称</th>
+            <th>数量</th>
+            <th>单位</th>
+            <th>进货价格</th>
+            <th>金额</th>
+            <th>仓库</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="row in rows track by $index" on-finish-render >
+            <td><i class="fa fa-trash-o text-error" ng-click="delRow($index)"></i>&nbsp;&nbsp;<i class="icon-plus text-info" ng-click="addRow()"></i></td>
+            <td>
+                <ui-select ng-model="rows[$index].good" on-select="getUnit($item,$index)"  class="inline" style="width:160px">
+                    <ui-select-match >{{$select.selected.goods_name}}</ui-select-match>
+                    <ui-select-choices repeat="good in goods"
+                                       refresh="query_goods($select.search)"
+                                       refresh-delay="0" >
+                        <div ng-bind-html="good.goods_name"></div>
+                    </ui-select-choices>
+                </ui-select>
+
+            <td><input type="number" ng-model="row.number" string-to-number ng-change="cal($index)" ng-keypress="next_number($event,$index)" >&nbsp;{{row.good.unit}}</td>
+            <td>
+                <ui-select ng-model="rows[$index].unit" on-select="getPrice($item,$index)" class="inline" style="width:80px">
+                    <ui-select-match >{{$select.selected.unit_name}}</ui-select-match>
+                    <ui-select-choices repeat="unit in rows[$index].units">
+                        <div ng-bind-html="unit.unit_name"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </td>
+            <td><input type="number" ng-model="row.price" string-to-number ng-change="cal($index)" ng-keypress="next($event,$index)"></td>
+            <td><input type="number" ng-model="row.sum" string-to-number  readonly></td>
+            <td>
+                <select ng-model="row.store_id" required >
+                    <option ng-repeat="store in stores" value="{{store.store_id}}">{{store.store_name}}</option>
+                </select>
+            </td>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="2" align="right">合计数量：</td><td>{{ttl_number|number:2}}</td>
+            <td align="right">合计金额：</td><td>{{ttl_sum| currency:"￥ "}}元</td>
+        </tr>
+        </tfoot>
+    </table>
+    <div style="text-align: center" >
+        <button class="btn  w-xs btn-success "  ng-click="save()" ng-disabled="check">{{!check?'保存库存':'保存中..'}}</button>
+    </div>
+    &nbsp;
+    <!-- toaster directive -->
+    <toaster-container toaster-options="{'position-class': 'toast-center', 'close-button':true}"></toaster-container>
+    <!-- / toaster directive -->
+</div>
+</div>
+</div>

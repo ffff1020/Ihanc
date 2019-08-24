@@ -1,0 +1,51 @@
+<div class="modal-header">
+    <h4 class="inline"><a style="color: #ec2121">{{inorder}}</a>营业明细</h4>
+</div>
+<div class=" table-responsive" style=" overflow-y: auto; max-height: 400px">
+    <table class="table table-striped b-t b-light">
+        <thead>
+        <tr>
+            <th>产品名称</th>
+            <th>供应商</th>
+            <th>数量</th>
+            <th>价格</th>
+            <th>金额</th>
+            <th>溢损数量</th>
+            <th>盈亏</th>
+            <th>备注</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat-start="list in lists" >
+            <td >{{list.goods_name}}</td>
+            <td >{{list.supply_name}}</td>
+            <td>{{list.pNumber|number:2}}</td>
+            <td>{{list.pSum/list.pNumber|currency:'￥'}}</td>
+            <td>{{list.pSum|currency:'￥'}}</td>
+            <td rowspan="3">{{list.sNumber*1+list.stockNumber*1-list.pNumber*1|number:2}}</td>
+            <td rowspan="3">{{list.sSum*1+list.stockSum*1-list.pSum*1|currency:'￥'}}</td>
+            <td rowspan="3">{{list.summary}}</td>
+        </tr>
+            <tr >
+            <td  colspan="2" style="text-align: right">销售合计:</td>
+            <td>{{list.sNumber|number:2}}</td>
+            <td>{{list.sSum/list.sNumber|currency:'￥'}}</td>
+            <td>{{list.sSum|currency:'￥'}}</td>
+           </tr>
+        <tr >
+            <td  colspan="2" style="text-align: right">库存合计:</td>
+            <td>{{list.stockNumber|number:2}}</td>
+            <td>{{list.stockSum/list.stockNumber|currency:'￥'}}</td>
+            <td>{{list.stockSum|currency:'￥'}}</td>
+        </tr>
+        <tr ng-repeat-end></tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <footer>
+        <div class="text-right" style="padding-right: 2%">
+            <button class="btn m-b-xs w-xs btn-primary" ng-click="cancel()">取消</button>
+        </div>
+    </footer>
+</div>

@@ -1,0 +1,33 @@
+﻿<div class="container w-xxl w-auto-xs" ng-controller="LoginController">
+  <a href class="navbar-brand block m-t">{{app.name}}</a>
+  <div class="m-b-lg">
+    <div class="wrapper text-center">
+      <strong>欢迎使用瀚盛管理系统</strong>
+    </div>
+    <form name="form" class="form-validation">
+      <div class="list-group list-group-sm">
+        <div class="list-group-item">
+          <input type="text" placeholder="请输入用户名或电话号码" class="form-control no-border" ng-model="user.username" ng-blur="getCode()" required>
+        </div>
+        <div class="list-group-item">
+           <input type="password" placeholder="请输入密码" class="form-control no-border" ng-model="user.password" required>
+        </div>
+        <div  ng-show="codeInfo!=null">
+          {{codeInfo}}
+        </div>
+        <div class="list-group-item inline" style="width: 60%">
+          <input type="text" placeholder="请输入验证码" class="form-control no-border" ng-model="user.code" required >
+        </div>
+        <div class="inline" style="position: absolute;padding-left: 5px" >
+          <div style="height: 10px">&nbsp;</div>
+          <a class="btn btn-sm btn-info {{disabled}}" ng-click="getCode()" >{{mytimer}}发送验证码</a>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="login()" ng-disabled='form.$invalid'>登录</button>
+      <div class="line line-dashed"></div>
+      <div class="text-danger wrapper text-center" ng-show="authError">
+          {{authError}}
+      </div>
+    </form>
+  </div>
+</div>

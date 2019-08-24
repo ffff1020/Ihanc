@@ -1,0 +1,43 @@
+<div class="wrapper-md" ng-controller="StatisticsAssetController">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            总资产统计
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading " style="text-align: center">
+                当月总资产统计
+            </div>
+            <div class="table-responsive">
+                <div ng-grid="gridOptions" style="height: 100px"></div>
+            </div>
+            <div class="">
+                <div class="panel wrapper">
+                    <h5 class="font-thin m-t-none m-b text-muted">总资产对比{{wait}}</h5>
+                    <div ui-jq="plot" ui-options="[
+                { label: '银行金额', data: {{d1_1}} ,bars: { show: true, fill: true, barWidth: 0.1,lineWidth: 1, order: 1, fillColor: { colors: [{ opacity: 0.5 }, { opacity: 0.9}] } }},
+                { label: '应收金额', data: {{d1_2}} ,bars: { show: true, fill: true, barWidth: 0.1,lineWidth: 1, order: 1, fillColor: { colors: [{ opacity: 0.5 }, { opacity: 0.9}] } }},
+                { label: '应付金额', data: {{d1_3}},bars: { show: true, fill: true, barWidth: 0.1,lineWidth: 1, order: 1, fillColor: { colors: [{ opacity: 0.5 }, { opacity: 0.9}] } } },
+                { label: '库存金额', data: {{d1_4}} ,bars: { show: true, fill: true, barWidth: 0.1,lineWidth: 1, order: 1, fillColor: { colors: [{ opacity: 0.5 }, { opacity: 0.9}] } }},
+               { label: '员工应付', data: {{d1_5}} ,bars: { show: true, fill: true, barWidth: 0.1,lineWidth: 1, order: 1, fillColor: { colors: [{ opacity: 0.5 }, { opacity: 0.9}] } }},
+                {label:'总资产',data:{{d1_6}},  splines: { show: true ,tension: 0.45,  fill: 0 },points:{show:true,radius:3}}
+              ],
+              {
+
+                colors: ['{{app.color.info}}','#FFA07A', '{{app.color.success}}', '{{app.color.primary}}','#FF69B4','{{app.color.primary}}'],
+                series: { shadowSize: 1 },
+                xaxis:{ font: { color: '#ccc' },ticks: {{time}} },
+                yaxis:{ font: { color: '#ccc' } },
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#ccc' },
+                tooltip: true,
+                tooltipOpts: { content: '%s:%y',  defaultTheme: false, shifts: { x: 0, y: 20 } },
+                legend:false
+              }" style="height: 240px; padding: 0px; position: relative;">
+                </div>
+            </div>
+
+        </div>
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'position-class': 'toast-center', 'close-button':true}"></toaster-container>
+        <!-- / toaster directive -->
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="wrapper-md" ng-controller="StatisticsProfitController">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            毛利润统计
+        </div>
+        <div class="row wrapper">
+            <div class="col-sm-3">
+                <label >开始日期</label>
+                <date-directive  dt="sdate"></date-directive>
+            </div>
+            <div class="col-sm-3 ">
+                <label >结束日期</label>
+                <date-directive  dt="edate"></date-directive>
+            </div>
+            <div class="col-sm-6 " style="padding-top: 20px;">
+                <button class="btn m-b-xs w-xs btn-success" ng-click="queryGrid()">统计查询</button>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading " style="text-align: center">
+                {{myTime}}毛利润统计{{sum|currency:"￥"}}
+            </div>
+            <div class="col-md-7 pull-right">
+                <div class="panel wrapper">
+                    <label class="i-switch bg-warning pull-right" ng-init="showSpline=true">
+                        <input type="checkbox" ng-model="showSpline">
+                        <i></i>
+                    </label>
+                    <h5 class="font-thin m-t-none m-b text-muted">{{item[0].goods_name}}{{wait}}</h5>
+                    <div ui-jq="plot" ui-refresh="showSpline" ui-options="
+              [
+                { data: {{d0_1}}, label:'总毛利', points: { show: true, radius: 1}, splines: { show: showSpline, tension: 0.4, lineWidth: 1, fill: 0.8 } },
+                { data: {{d0_2}}, label:'商品毛利', points: { show: true, radius: 1}, splines: { show: showSpline, tension: 0.4, lineWidth: 1, fill: 0.8 } ,yaxis: 2}
+              ],
+              {
+                colors: ['{{app.color.info}}', '{{app.color.primary}}'],
+                series: { shadowSize: 3 },
+                xaxis:{ font: { color: '#a1a7ac' },ticks: {{time}} },
+                yaxis:{ show:false,font: { color: '#a1a7ac' }},
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },
+                tooltip: true,
+                tooltipOpts: { content: '%x %s %y.2',  defaultTheme: false, shifts: { x: 10, y: -25 } }
+              }
+            " style="height:200px" >
+                    </div>
+                </div>
+                <div class="panel wrapper bg-light dker">
+                    <h5 class="font-thin m-t-none m-b text-muted">{{item[0].goods_name}}{{wait}}</h5>
+                    <div ui-jq="plot" ui-refresh="showSpline" ui-options="
+              [
+                { data: {{d1_1}}, label:'溢损数量', points: { show: true, radius: 3}, splines:  { show: true, tension: 0.45, lineWidth: 2, fill: 0 }},
+                { data: {{d1_2}}, label:'溢损百分比', points: { show: true, radius: 1}, splines: { show: true, tension: 0.45, lineWidth: 2, fill: 0 },yaxis: 2},
+              ],
+              {
+                colors: ['{{app.color.info}}', '{{app.color.primary}}'],
+                series: { shadowSize: 3 },
+                xaxis:{
+                     font: { color: '#a1a7ac' },
+                     ticks: {{time}}
+                     },
+                yaxis: {show:false},
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },
+                tooltip: true,
+                tooltipOpts: { content: '%x %s %y.2',  defaultTheme: false, shifts: { x: 0, y: 20 } },
+              }
+            " style="height:200px" >
+
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div ng-grid="gridOptions" style="height: 550px"></div>
+            </div>
+        </div>
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'position-class': 'toast-center', 'close-button':true}"></toaster-container>
+        <!-- / toaster directive -->
+    </div>

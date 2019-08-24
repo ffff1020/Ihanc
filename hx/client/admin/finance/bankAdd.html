@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h4>{{bank.bank_id>0?'修改':'添加'}}银行</h4>
+</div>
+<form class="form-validation" ng-submit="add()">
+<div class="modal-body">
+    <label>银行名称:</label><br>
+    <input type="text" class="form-control" ng-model="bank.bank_name" required><br>
+    <label ng-if="bank.bank_id==0">初始金额:</label><br>
+    <input ng-if="bank.bank_id==0" type="number" class="form-control" ng-model="bank.balance" required ><br>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="submit">保存</button>
+    <a class="btn btn-default" ng-click="$dismiss('cancel')">取消</a>
+</div>
+</form>

@@ -1,0 +1,65 @@
+<div class="modal-header">
+    <h4>添加费用：{{inorder}}</h4>
+</div>
+<div class="panel-body">
+    <form role="form" ng-submit="saveFee()" class="form-validation inline" style="width: 45%">
+        <div class="form-group" >
+            <label class="col-sm-4">员工：</label>
+            <ui-select ng-model="account.people" id="staff" class="inline" style="width:200px">
+                <ui-select-match >{{$select.selected.staff_name}}</ui-select-match>
+                <ui-select-choices repeat="staff in staffs"
+                                   refresh="query_staff($select.search)"
+                                   refresh-delay="0">
+                    <div ng-bind-html="staff.staff_name"></div>
+                </ui-select-choices>
+            </ui-select>
+        </div>
+        <div class="form-group" >
+            <label class="col-sm-4">科目名称：</label>
+            <select ng-model="account.subject" class="form-control inline " style="width: 50%">
+                <option ng-repeat="subject in subjects" value="{{subject.subject_id}}">{{subject.subject_name}}</option>
+            </select>
+        </div>
+        <div class="form-group" >
+            <label class="col-sm-4">费用金额：</label>
+            <input type="number" ng-model="account.cost" required style="width:60%"  class="form-control  inline">
+        </div>
+        <div class="form-group">
+            <label class="col-sm-4">付款银行：</label>
+            <select ng-model="account.bank_id" class="form-control  inline" style="width: 50%">
+                <option value=0>未付款</option>
+                <option ng-repeat="bank in banks" value="{{bank.bank_id}}">{{bank.bank_name}}</option>
+            </select>
+        </div>
+        <div class="form-group" >
+            <label class="col-sm-4">收入摘要：</label>
+            <textarea ng-model="account.summary"  style="width:60%"  class="form-control  inline"></textarea>
+        </div>
+        <div class="text-right" style="padding-right: 2%">
+            <button type="submit" class="btn  btn-success" ng-disabled="check">{{!check?'保存':'保存中..'}}</button>
+            <a class="btn  btn-primary" ng-click="cancel()" >取消</a>
+        </div>
+    </form>
+    <div class=" inline pull-right " style="width: 55%">
+        <table class="table table-striped b-t b-light">
+            <thead>
+            <th>序号</th>
+            <th>员工</th>
+            <th>金额</th>
+            <th>备注</th>
+            <th>操作</th>
+            </thead>
+            <tbody>
+            <tr ng-repeat="list in lists">
+                <td>{{$index+1}}</td>
+                <td>{{list.staff_name}}</td>
+                <td>{{list.sum|currency}}</td>
+                <td>{{list.summary}}</td>
+                <td><i class="glyphicon glyphicon-remove" ng-show="list.finish==0" ng-click="delete(list)"><a>删除</a></i></td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+</div>

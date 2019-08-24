@@ -1,0 +1,80 @@
+<div class="wrapper-md" ng-controller="StatisticsIncomeController">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            收入支出统计
+        </div>
+        <div class="row wrapper">
+            <div class="col-sm-3">
+                <label >开始日期</label>
+                <date-directive  dt="sdate"></date-directive>
+            </div>
+            <div class="col-sm-3 ">
+                <label >结束日期</label>
+                <date-directive  dt="edate"></date-directive>
+            </div>
+            <div class="col-sm-6 " style="padding-top: 20px;">
+                <button class="btn m-b-xs w-xs btn-success" ng-click="queryGrid()">统计查询</button>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading " style="text-align: center">
+                {{myTime}}收入支出统计
+            </div>
+            <div class="col-md-7 pull-right">
+                <div class="panel wrapper">
+                    <h5 class="font-thin m-t-none m-b text-muted">费用支出统计{{wait}}</h5>
+                    <div ui-jq="plot" ui-refresh="showSpline" ui-options="
+              [
+                { data: {{d0_1}}, label:'总支出', points: { show: true, radius: 1} },
+                { data: {{d1_1}}, label:'支出科目', points: { show: true, radius: 1}}
+              ],
+              {
+                colors: ['{{app.color.info}}', '{{app.color.primary}}'],
+                series: { shadowSize: 3 },
+                bars: { show: true, barWidth: 0.3,order: 1, fillColor: { colors: [{ opacity: 0.2 }, { opacity: 0.4}] } },
+                xaxis:{
+                     font: { color: '#a1a7ac' },
+                     ticks: {{time}}
+                     },
+                yaxis: {show:false},
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },
+                tooltip: true,
+                tooltipOpts: { content: '%x %s %y.2',  defaultTheme: false, shifts: { x: 0, y: 20 } },
+              }
+            " style="height:200px" >
+
+                    </div>
+                </div>
+                <div class="panel wrapper">
+                    <h5 class="font-thin m-t-none m-b text-muted">收入统计{{wait}}</h5>
+                    <div ui-jq="plot" ui-refresh="showSpline" ui-options="
+              [
+                { data: {{d0_2}}, label:'总收入', points: { show: true, radius: 3}, splines:  { show: true, tension: 0.45, lineWidth: 2, fill: 0 }},
+                { data: {{d1_2}}, label:'收入科目', points: { show: true, radius: 1}, splines: { show: true, tension: 0.45, lineWidth: 2, fill: 0 }},
+              ],
+              {
+                colors: ['{{app.color.info}}', '{{app.color.primary}}'],
+                series: { shadowSize: 3 },
+                xaxis:{
+                     font: { color: '#a1a7ac' },
+                     ticks: {{time}}
+                     },
+                yaxis: {show:false},
+                grid: { hoverable: true, clickable: true, borderWidth: 0, color: '#dce5ec' },
+                tooltip: true,
+                tooltipOpts: { content: '%x %s %y.2',  defaultTheme: false, shifts: { x: 0, y: 20 } },
+              }
+            " style="height:200px" >
+
+                    </div>
+                </div>
+            </div>
+            <div class="table-responsive">
+                <div ng-grid="gridOptions" style="height: 550px"></div>
+            </div>
+        </div>
+        <!-- toaster directive -->
+        <toaster-container toaster-options="{'position-class': 'toast-center', 'close-button':true}"></toaster-container>
+        <!-- / toaster directive -->
+    </div>
+</div>

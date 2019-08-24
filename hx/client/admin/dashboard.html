@@ -1,0 +1,101 @@
+﻿<div class="bg-light lter b-b wrapper-md">
+    <h3 class="m-n font-thin h3">营业概括</h3>
+</div>
+<div class="wrapper-md" ng-controller="DashBoardController">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <date-directive  dt="sdate" class="inline"></date-directive><button class="btn m-b-xs w-xs btn-success" style="margin-top: -20px" ng-click="query(0)">查询</button>
+            <button class="btn  btn-danger pull-left" style="margin-right: 20px" ng-click="data()">应收应付备份</button>
+        </div>
+    <div class="panel panel-default col-sm-6">
+        <div class="panel-heading"><a ng-click="show('S')">{{today}}营业额：{{sum|currency:'￥'}}</a></div>
+        <div class="panel-heading"><a >{{today}}收欠账：{{cash-sum+credit-order|currency:'￥'}}</a></div>
+        <div class="panel-heading"><a ng-click="showCredit()">{{today}}赊出金额：{{credit|currency:'￥'}}</a></div>
+
+    </div>
+    <div class="panel panel-default col-sm-6">
+        <div class="panel-heading"><a ng-click="showCash()">{{today}}合计收款：{{cash|currency:'￥'}}</a></div>
+        <div class="panel-heading"><a ng-click="showCost('cost')">{{today}}费用支出：{{cost|currency:'￥'}}</a></div>
+        <div class="panel-heading"><a ng-click="showCost('income')">{{today}}其他收入：{{income|currency:'￥'}}</a></div>
+    </div>
+    </div>
+    <div>&nbsp;</div>
+    <div class="panel panel-default">
+        <div class="panel-heading">未来3天订货统计：</div>
+        <div>
+        <div class="panel-body  pull-up col-sm-4" >
+        <div class="table-responsive">{{now1}}
+            <table class="table table-striped b-t b-light">
+                <tr>
+                    <th>产品</th>
+                    <th>数量</th>
+                </tr>
+                <tbody>
+                <tr ng-repeat="list in orders1">
+                    <td>{{list.goods_name}}</td>
+                    <td>{{list.number|number:2}}{{list.unit_name}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+        <div class="panel-body  pull-up col-sm-4">
+            <div class="table-responsive">{{now2}}
+                <table class="table table-striped b-t b-light">
+                    <tr>
+                        <th>产品</th>
+                        <th>数量</th>
+                    </tr>
+                    <tbody>
+                    <tr ng-repeat="list in orders2">
+                        <td>{{list.goods_name}}</td>
+                        <td>{{list.number|number:2}}{{list.unit_name}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel-body  pull-up ">
+            <div class="table-responsive">{{now3}}
+                <table class="table table-striped b-t b-light">
+                    <tr>
+                        <th>产品</th>
+                        <th>数量</th>
+                    </tr>
+                    <tbody>
+                    <tr ng-repeat="list in orders3">
+                        <td>{{list.goods_name}}</td>
+                        <td>{{list.number|number:2}}{{list.unit_name}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-heading">在途货物：</div>
+        <div class="panel-body">
+            <table class="table table-striped b-t b-light">
+                <tr>
+                    <th>供应商</th>
+                    <th>金额</th>
+                    <th>操作</th>
+                </tr>
+                <tbody>
+                <tr ng-repeat="list in onWay">
+                    <td>{{list.supply_name}}</td>
+                    <td>{{list.time}}</td>
+                    <td><a ng-click="receiveGoods(list)">确认收货</a>
+                        <i class="icon-magnifier" ng-click="more(list)">明细</i>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<!-- toaster directive -->
+<toaster-container toaster-options="{'position-class': 'toast-center', 'close-button':true}"></toaster-container>
+<!-- / toaster directive -->

@@ -1,0 +1,45 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="AbnTestController">
+    <div class="col w-lg bg-light b-r bg-auto" style="width: 30%">
+        <div class="wrapper-md">
+            <div class="vbox">
+                <div class="row-row">
+
+                        <div class="list-group no-radius no-border no-bg m-b-none">
+                            <a ng-repeat="item in roles" ng-dblclick="editItem(item)" class="list-group-item m-l hover-anchor b-a no-select" ng-class="{'focus m-l-none': item.selected}" ng-click="selectRole(item)">
+                                <span ng-click='deleteRole(item)' class="pull-right text-muted hover-action"><i class="fa fa-times"></i></span>
+                                <span class="block m-l-n" ng-class="{'m-n': item.selected }">{{ item.role_name ? item.role_name  : 'Untitled' }}</span>
+                                <input type="text" class="form-control pos-abt" ng-show="item.editing" ng-blur="doneEditing(item)" ng-model="item.role_name" style="top:3px;left:2px;width:98%" ui-focus="item.editing">
+                            </a>
+                        </div>
+
+                </div>
+            </div>
+            <div class="line b-b line-lg"></div>
+            <button ng-click="add_role()" class="btn btn-success btn-sm"><i class="fa fa-fw m-r-xs fa-plus"></i> 添加角色</button>
+        </div>
+    </div>
+
+    <div class="col-sm-10 pull-right" >
+        <div class="wrapper-md">
+            <div class="b-a bg-light dk r r-2x">
+                <span ng-if="doing_async">...loading...</span>
+                <abn-tree
+                        tree-data         = "my_data"
+                        tree-control      = "my_tree"
+                        on-select         = "my_tree_handler(branch)"
+                        expand-level      = "2"
+                        initial-selection = "Granny Smith"
+                        icon-leaf         = "fa fa-file-o"
+                        icon-expand       = "fa fa-plus"
+                        icon-collapse     = "fa fa-minus"
+                >
+                </abn-tree>
+            </div>
+        </div>
+        <div class="line b-b line-lg"></div>
+        <button ng-click="updateAuth()" class="btn btn-primary btn-sm pull-right" ng-show="role.selected">{{role.role_name}}修改权限</button>
+    </div>
+</div>
+<!-- toaster directive -->
+<toaster-container toaster-options="{'position-class': 'toast-center', 'close-button':true}"></toaster-container>
+<!-- / toaster directive -->

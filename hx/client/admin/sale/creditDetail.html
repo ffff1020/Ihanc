@@ -1,0 +1,79 @@
+<div class="modal-header" >
+    <h4 ><a style="color: #ec2121">{{member.member_name}}</a>的应收明细</h4>
+    <div class=" pull-right pull-up" >
+        <div class="inline" >
+            <date-directive  dt="sdate"></date-directive>
+        </div><div class="inline" style="vertical-align: top">到</div>
+        <div class="inline">
+            <date-directive  dt="edate"></date-directive>
+        </div>
+        <button class="btn m-b-xs w-xs btn-addon " style="vertical-align: top" ng-click="selectCredit()">选择</button>
+    </div>
+    <div><a style="color: #ec2121">{{member.member_phone}}</a></div>
+</div>
+<div class="modal-body table-responsive" style="width: 898px; overflow-y: auto; max-height: 400px">
+    <table class="table table-striped b-t b-light">
+        <thead>
+        <tr>
+            <th>日期</th>
+            <th>产品名称</th>
+            <th>数量</th>
+            <th>价格</th>
+            <th>金额</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="credit in credits" title="此单总金额：{{credit.ttl|currency:'￥'}}" >
+            <td>
+                <div ng-show="credit.sale_id!=credits[$index-1].sale_id">{{credit.time}}
+                    <div ng-show="credit.summary" style="color: #ff7f16">{{credit.summary}}</div>
+                </div>
+            </td>
+            <td>{{credit.goods_name}}<a ng-if="credit.remark">:{{credit.remark}}</a>
+                {{credit.type=='Init'?'初期录入':''}}
+                {{credit.type=='P'?'客户付款':''}}
+                {{credit.type=='backFlush'?'反冲生成已付款':''}}
+                {{credit.type=='income'?'收入条目':''}}
+                {{credit.type=='cost'?'支出条目':''}}
+                <div ng-show="credit.type=='CF'" ><a ng-click="cfPrint(credit.sale_id)">结转余额</a></div>
+            </td>
+            <td>{{credit.number|number:2}}{{credit.unit_name}}</td>
+            <td>{{credit.price|currency:'￥'}}</td>
+            <td>{{(credit.type==='S'||credit.type==='B')?(credit.sum|currency:'￥'):(credit.ttl|currency:'￥')}}</td>
+            <td>
+                <label class="i-checks m-b-none" ng-if="(credit.type=='P')||(credit.sale_id!=credits[$index-1].sale_id)||((credit.time==credits[$index-1].time&&credit.type!=credits[$index-1].type))"><input type="checkbox" ng-change="cal(credit.selected?credit.ttl:(-1)*credit.ttl)" ng-model="credits[$index].selected"><i></i></label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="5" align="right">全选</td>
+            <td>
+                <label class="i-checks m-b-none"><input type="checkbox" ng-click="selectAll()"><i></i></label>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div>
+    <hr style=" height:2px;border:none;border-top:2px dotted #185598;" />
+    <footer>
+        <div style="padding-left: 2%">
+            <div>
+                <label>收款银行：</label>
+                <select ng-model="pay.bank">
+                    <option ng-repeat="bank in banks" value="{{bank.bank_id}}">{{bank.bank_name}}</option>
+                </select>
+            </div>
+            <div class="text-left">
+                <label>收款金额：</label>
+                <input type="number" ng-model="pay.paid_sum" ng-change="clean()">
+            </div>
+        </div>
+        <div class="text-right" style="padding-right: 2%">
+            <button class="btn m-b-xs w-xs btn-success" ng-click="payment()" ng-disabled="check">{{!check?'收款':'保存中..'}}</button>
+            <button class="btn m-b-xs w-xs btn-info" ng-click="carryOver()" ng-disabled="check">{{!check?'结转':'保存中..'}}</button>
+            <button class="btn m-b-xs w-xs btn-black" ng-click="print()">打印</button>
+            <button class="btn m-b-xs w-xs btn-primary" ng-click="cancel()">取消</button>
+        </div>
+    </footer>
+</div>

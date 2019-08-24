@@ -1,0 +1,73 @@
+<div class="noPrint">
+    <button ng-click="preview()">打印预览</button>
+</div>
+<div ng-repeat="page in pages track by $index" on-finish-render>
+<div id='page{{$index+1}}' class="paging" ng-style="$index==0?mystyle:nostyle"  >
+    <div style="text-align: center">
+        <h3 class="printFont">{{info.cname}}</h3>
+        <h5 class="printFont">对账单</h5>
+    </div>
+    <div class="printFont">客户：{{member_name}}</div>
+    <div class="printFont">打印日期：{{now}}</div>
+    <table style="width: 95%;border: solid 1px;margin:0 auto;border-collapse:collapse;" class="printTable" >
+        <thead>
+        <tr>
+            <th  >日期</th>
+            <th  >产品名称</th>
+            <th  >数量</th>
+            <th  >价格</th>
+            <th  >金额</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="credit in page track by $index" print-directive >
+
+        </tr>
+        </tbody>
+    </table>
+       <div ng-if="($index+1)==pNum">
+    <div  class="printFont">合计数量：{{ttl.number|number:1}}</div>
+    <div class="printFont">合计货款：{{ttl.sum|currency:'￥':0}}元</div>
+           <div class="printFont" ng-show="ttl.payment!=0">客户付款：{{(ttl.payment*(-1))|currency:'￥':0}}元</div>
+    <div class="printFont" ng-show="ttl.credit!=0">截止{{now|limitTo:11}},累计欠款：{{ttl.credit|currency:'￥':0}}元</div>
+    <hr style=" height:2px;border:none;border-top:2px dashed;" />
+    <div style="text-align: center">
+        <p class="printFont">谢谢您的惠顾，欢迎您再次光临！</p></div>
+    <div >
+        <p class="printFont">联系电话：{{info.ctel}}</p>
+        <p class="printFont" ng-repeat="add in address track by $index">
+            地址{{address.length>1?$index+1:""}}：{{add}}
+        </p>
+    </div>
+        </div>
+    <div style="text-align: center" ng-show="pNum>1">第{{$index+1}}页/共{{pNum}}页</div>
+</div>
+</div>
+<div ng-if="more" id="page{{pNum}}" class="paging" >
+    <div style="text-align: center">
+        <h3 class="printFont">{{info.cname}}</h3>
+        <h5 class="printFont">对账单</h5>
+    </div>
+    <div class="printFont">客户：{{member_name}}</div>
+    <div class="printFont">打印日期：{{now}}</div>
+
+    <div  class="printFont">合计数量：{{ttl.number|number:1}}</div>
+    <div class="printFont">合计货款：{{ttl.sum|currency:'￥':0}}元</div>
+    <div class="printFont" ng-show="ttl.payment!=0">客户付款：{{(ttl.payment*(-1))|currency:'￥':0}}元</div>
+    <div class="printFont" ng-show="ttl.credit!=0">截止{{now|limitTo:11}},累计欠款：{{ttl.credit|currency:'￥':0}}元</div>
+    <hr style=" height:2px;border:none;border-top:2px dashed;" />
+    <div style="text-align: center">
+        <p class="printFont">谢谢您的惠顾，欢迎您再次光临！</p></div>
+    <div >
+        <p class="printFont">联系电话：{{info.ctel}}</p>
+        <p class="printFont" ng-repeat="add in address track by $index">
+            地址{{address.length>1?$index+1:""}}：{{add}}
+        </p>
+    </div>
+    <div style="text-align: center" >第{{pNum}}页/共{{pNum}}页</div>
+</div>
+
+<div CLASS="noPrint">
+    <OBJECT  ID="jatoolsPrinter" CLASSID="CLSID:B43D3361-D075-4BE2-87FE-057188254255"
+             codebase="jatoolsPrinter.cab#version=8,6,0,0"></OBJECT>
+</div>

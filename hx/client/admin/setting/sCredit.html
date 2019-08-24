@@ -1,0 +1,52 @@
+<div class="wrapper-md" ng-controller="SettingSCreditController">
+    <div class=" m-b-xs">
+        <button class="btn m-b-xs btn-sm btn-primary btn-addon" ng-click="supplyDialog()"><i class="fa fa-plus"></i>新增供应商</button>
+    </div>
+    <div class="panel panel-default">
+        <div class="table-responsive">
+            <table class="table table-striped b-t b-light" id="sCredit" >
+                <thead>
+                <tr>
+                    <th>操作</th>
+                    <th>供应商名称</th>
+                    <th>应付金额</th>
+                    <th>备注</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in rows track by $index" >
+                    <td><i class="fa fa-trash-o text-error" ng-click="delRow($index)"></i>&nbsp;&nbsp;<i class="icon-plus text-info" ng-click="addRow()"></i></td>
+                    <td >
+                        <ui-select ng-model="rows[$index].supply" on-select="getSupply($index)" class="inline" style="width:160px" >
+                            <ui-select-match >{{$select.selected.supply_name}}</ui-select-match>
+                            <ui-select-choices repeat="supply in supplys "
+                                               refresh="query_supply($select.search)"
+                                               refresh-delay="0"
+                                               minimum-input-length="1"
+                                               position="auto">
+                                <div ng-bind-html="supply.supply_name"></div>
+                            </ui-select-choices>
+                        </ui-select>
+                    </td>
+                    <td><input type="number"  ng-model="row.sum" string-to-number style="font-size: 120%" ng-keypress="next($event,$index)" ng-change="cal()"></td>
+                    <td><input type="text" ng-model="row.summary" style="font-size: 120%"  ng-keypress="nextRow($event,$index)"></td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="2" align="right">合计金额：</td><td>{{ttl_sum| currency:"￥ "}}元</td><td></td>
+                </tr>
+                </tfoot>
+            </table>
+            <div style="text-align: center" >
+                <button class="btn  w-xs btn-success "  ng-click="save()" ng-disabled="check">{{!check?'保存应付':'保存中..'}}</button>
+            </div>
+            <!-- toaster directive -->
+            <toaster-container toaster-options="{'position-class': 'toast-center', 'close-button':true}"></toaster-container>
+            <!-- / toaster directive -->
+            <div>&nbsp;</div>
+        </div>
+    </div>
+
+</div>
