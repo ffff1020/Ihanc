@@ -13,7 +13,7 @@ angular.module('app')
 
       $scope.app = {
          // weight:888.8,
-		host: "/hx/tp5/public/index.php",
+		host: "/ihanc/hx/tp5/public/index.php",
         name: 'iHanc',
         version: '1.0.0',
         // for chart colors
@@ -38,7 +38,7 @@ angular.module('app')
           asideDock: false,
           container: false
         }
-      }
+      };
 
 
       // save settings to local storage
@@ -55,7 +55,11 @@ angular.module('app')
         // save to local storage
         $localStorage.settings = $scope.app.settings;
       }, true);
-
+      //eva
+        $scope.goEasy = new GoEasy({
+            appkey: "BC-ac73259b70bd452987726d46482efeba"
+        });
+        console.log("main");
       // angular translate
       $scope.lang = { isopen: false };
       $scope.langs = {en:'English', de_DE:'German', it_IT:'Italian'};
@@ -71,8 +75,10 @@ angular.module('app')
 	  $scope.logout = function(){
 			$localStorage.auth = null;
 			$http.defaults.headers.common['Authorization'] = "Basic";
+			$scope.goEasy.unsubscribe({channel: $localStorage.channel});
+            $localStorage.channel=null;
 			$state.go("auth.login");
-	  }
+	  };
 
       function isSmartDevice( $window )
       {
@@ -90,11 +96,12 @@ angular.module('app')
       $scope.$on('loadOrderList',function (event,list) {
          $scope.$broadcast('loadOrder',list);
       });
+
   }]);
 /*factory defined by Eva*/
 app.factory('mycache',function ($cacheFactory) {
     var myCache={};
-    if($cacheFactory.get('myCache')==undefined){
+    if($cacheFactory.get('myCache')===undefined){
         myCache=$cacheFactory('myCache');
     }else {
         myCache=$cacheFactory.get('myCache');
@@ -107,7 +114,7 @@ app.service('myhttp',function ($http,$localStorage,$resource,$state) {
 
     this.getData=function (url,method,params) {
         $http.defaults.headers.common['Authorization'] = $localStorage.auth;
-        var $com = $resource("/hx/tp5/public/index.php/index/index/index");
+        var $com = $resource("/ihanc/hx/tp5/public/index.php/index/index/index");
         $com.get(function(data){
             //	$scope.session_user = $localStorage.user = data;
             if(data.error===0) {
@@ -118,13 +125,13 @@ app.service('myhttp',function ($http,$localStorage,$resource,$state) {
         });
         if(method==='GET'){
             return $http({
-                url:"/hx/tp5/public/index.php"+url,
+                url:"/ihanc/hx/tp5/public/index.php"+url,
                 method:"GET",
                 params:params
             })
         }else{
             return $http({
-                url:"/hx/tp5/public/index.php"+url,
+                url:"/ihanc/hx/tp5/public/index.php"+url,
                 method:method,
                 data:params
             })
@@ -196,4 +203,9 @@ app.directive('onFinishRender', function ($timeout) {
             });
         }
     };
+});
+app.filter('trustUrl',function($sce){
+    return function (input) {
+        return $sce.trustAsResourceUrl(input);
+    }
 });

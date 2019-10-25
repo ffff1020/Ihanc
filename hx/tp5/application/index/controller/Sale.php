@@ -344,7 +344,7 @@ class Sale
             $where['summary|member_sn|member_name']=['like','%'.$_GET['search'].'%'];
         }
         if($_GET['edate']&&$_GET['sdate'])
-            $where['time']=['between',array($_GET['sdate'],$_GET['edate'])];
+            $where['a.time']=['between',array($_GET['sdate'],$_GET['edate'])];
         $count=Db::table($saleTable)->alias('a')
             ->join($memberTable,'a.member_id=b.member_id')
             ->where($where)
@@ -368,7 +368,7 @@ class Sale
                 ->join($memberTable,'a.member_id=b.member_id')
                 ->where($where)
                 ->field('distinct a.*,b.member_name')
-                ->order('time desc')
+                ->order('a.time desc')
                 ->page($_GET['page'],10)
                 ->select();
             $count=Db::table($saleTable)->alias('a')
@@ -774,7 +774,9 @@ class Sale
             ->insert($bData);
         $infoTable=$this->mdb.'.info';
         $rs=Db::table($infoTable)->find(1);
-        \PushNotice::Push($this->user."收客户欠款",$postData['member']['member_name'].':'.$bankName.'--￥'.$postData['pay']['paid_sum'],$rs['ctel']);
+        $content=$postData['member']['member_name'].':'.$bankName.'--￥'.$postData['pay']['paid_sum'];
+        \PushNotice::Push($this->user."收客户欠款",$content,$rs['ctel']);
+        goEasy($rs['ctel'],$this->user."收客户欠款:".$content);
 
         if(!$rs) return json_encode(['result'=>2]);
         //判断sale表中插入数据是否删除
@@ -1157,6 +1159,7 @@ class Sale
             $saleDetailTable = $this->mdb . '.sale_detail';
             //插入saleDetail 表
             $detail = [];
+           // print_r($postData);
             foreach ($postData['detail'] as $value) {
                 $detail['sale_id'] = $sale_id;
                 $where['goods_id']=$detail['goods_id'] = $value['good']['goods_id'];
@@ -1171,6 +1174,7 @@ class Sale
                     ->insertGetId($detail);
                 $sum+=$value['sum'];
                 if (!$sale_detail_id) return json_encode(['result' => 2]);
+                unset($detail);
             }
 
         }
@@ -1203,7 +1207,7 @@ class Sale
         $infoTable=$this->mdb.'.info';
         $rs=Db::table($infoTable)->find(1);
         \PushNotice::Push("新订单",$postData['data']['member']['member_name'].'--￥'.$sum,$rs['ctel']);
-
+        goEasy($rs['ctel'],"新订单:".$postData['data']['member']['member_name'].'--￥'.$sum);
         return json_encode(['result'=>1]);
     }
 

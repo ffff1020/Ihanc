@@ -38,5 +38,24 @@ function insertAsset($mdb){
         $rs=\think\Db::table($assetTable)->insert($data);
     }
 }
+function goEasy($channel,$content){
+    //请求地址
+    $uri = "http://goeasy.io/goeasy/publish";
+    // 参数数组
+    $data = [
+        'appkey'  => "BC-ac73259b70bd452987726d46482efeba",
+        'channel' => $channel,
+        'content' =>$content
+    ];
+    $ch = curl_init ();
+    curl_setopt ( $ch, CURLOPT_URL, $uri );//地址
+    curl_setopt ( $ch, CURLOPT_POST, 1 );//请求方式为post
+    curl_setopt ( $ch, CURLOPT_HEADER, 0 );//不打印header信息
+    curl_setopt ( $ch, CURLOPT_RETURNTRANSFER, 1 );//返回结果转成字符串
+    curl_setopt ( $ch, CURLOPT_POSTFIELDS, $data );//post传输的数据。
+    $return = curl_exec ( $ch );
+    curl_close ( $ch );
+    return $return;
+}
 
 ?>

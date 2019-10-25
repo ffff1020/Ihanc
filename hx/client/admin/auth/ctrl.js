@@ -20,6 +20,7 @@ app.controller('LoginController',function($scope,$state,$http,$resource,Base64,$
     $scope.codeInfo=null;
    // $scope.user={username:''};
     var i=0;
+
     $scope.getCode=function () {
         if(angular.isDefined($scope.user)&&i<=0)
         myhttp.getData('/index/index/getCode','POST',{data:$scope.user.username})
@@ -38,7 +39,7 @@ app.controller('LoginController',function($scope,$state,$http,$resource,Base64,$
                     $scope.authError=res.data.result.Message;
                 }
             });
-    }
+    };
     $scope.updateTime=function() {
             $scope.timer = $interval(function () {
                 $scope.mytimer = i + '秒后';
@@ -49,14 +50,14 @@ app.controller('LoginController',function($scope,$state,$http,$resource,Base64,$
                     $scope.disabled='';
                 }
             }, 1000);
-    }
+    };
     $scope.login = function(){
         $scope.authError = "";
         var authdata = Base64.encrypt($scope.user.username + ':' + $scope.user.password+':'+$scope.user.code);
         $http.defaults.headers.common['Authorization'] =authdata;
         var $com = $resource($scope.app.host + "/index/index/login");
         $com.get(function(data){
-            if(data.error==0) {
+            if(data.error===0) {
                 $scope.authError = "用户名密码或验证码错误，请重新输入";
                 //return;
             }else {
@@ -64,6 +65,8 @@ app.controller('LoginController',function($scope,$state,$http,$resource,Base64,$
                 $localStorage.auth = data.token;
                 $localStorage.role_auth=data.role_auth;
                 $localStorage.role=data.role_id===0;
+                $localStorage.channel=data.ctel;
+                console.log("login");
                 $state.go('app.dashboard');
             }
         },function(){

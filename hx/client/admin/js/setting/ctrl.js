@@ -67,7 +67,7 @@ app.controller('GoodsCtrl', function($scope, $resource,$http, $filter,$localStor
 
     $scope.queryCat();
     $scope.queryUnit();
-    if(mycache.get('goods')==undefined){
+    if(mycache.get('goods')===undefined){
          $scope.queryGoods();
     }else {
          $scope.items=mycache.get('goods');
@@ -86,7 +86,7 @@ app.controller('GoodsCtrl', function($scope, $resource,$http, $filter,$localStor
     $scope.checkItem = function(obj, arr, key){
         var i=0;
         angular.forEach(arr, function(item) {
-            if(item[key].indexOf( obj[key] ) == 0){
+            if(item[key].indexOf( obj[key] ) === 0){
                 var j = item[key].replace(obj[key], '').trim();
                 if(j){
                     i = Math.max(i, parseInt(j)+1);

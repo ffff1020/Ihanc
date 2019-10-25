@@ -84,7 +84,11 @@ app
                   resolve: {
                       deps: ['$ocLazyLoad',
                           function( $ocLazyLoad ){
-                              return $ocLazyLoad.load('admin/js/dashboard.js');
+                              return $ocLazyLoad.load('admin/js/dashboard.js').then(
+                                  function () {
+                                      return $ocLazyLoad.load('admin/js/sale/ctrl.js')
+                                  }
+                              );
                           }]
                   },
                   ncyBreadcrumb: {
@@ -331,22 +335,6 @@ app
                       label: '客户管理'
                   }
               })
-             /* .state('app.sale.index',{
-                  url:'/index',
-                  templateUrl:'tpl/table_grid.html',
-                  resolve: {
-                      deps: ['$ocLazyLoad',
-                          function( $ocLazyLoad ){
-                              return $ocLazyLoad.load('js/controllers/grid.js').then(function () {
-                                  return $ocLazyLoad.load('ngGrid');
-                              });
-                          }]
-                  },
-                  ncyBreadcrumb: {
-                      parent:'app.dashboard',
-                      label: '新销售单'
-                  }
-              })*/
               .state('app.sale.sale',{
                   url:'/sale',
                   eva:'sale',

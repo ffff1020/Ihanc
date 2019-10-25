@@ -60,7 +60,7 @@
           <span>修改密码</span>
         </a>
       </li>
-        <li ui-sref-active="active" >
+        <li ui-sref-active="active" ng-show="role===true||auth.log===true">
             <a ui-sref="app.setting.log">
                 <span>系统日志</span>
             </a>
@@ -73,7 +73,7 @@
         <i class="fa fa-fw fa-angle-right text"></i>
         <i class="fa fa-fw fa-angle-down text-active"></i>
       </span>
-      <i class="glyphicon glyphicon-log-in icon text-info-lter""></i>
+      <i class="glyphicon glyphicon-log-in icon text-info-lter"></i>
       <span class="font-bold">进货管理</span>
     </a>
     <ul class="nav nav-sub dk" ng-show="role===true||auth.supply===true">

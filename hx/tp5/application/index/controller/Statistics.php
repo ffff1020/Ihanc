@@ -141,7 +141,7 @@ class Statistics
         $rs=Db::table($saleTable)->alias('a')
             ->join($memberTable,'a.member_id=b.member_id')
             ->where($where)
-            ->field('member_name,sum(sum) as sum,sale_id')
+            ->field('member_name,sum(sum) as sum,sale_id,a.member_id')
             ->group('a.member_id')
             ->order('sum desc,sale_id desc')
             ->page($_GET['page'],10)

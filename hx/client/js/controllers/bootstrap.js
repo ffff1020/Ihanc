@@ -215,7 +215,62 @@
     $scope.dynamicTooltipText = 'dynamic';
     $scope.htmlTooltip = 'I\'ve been made <b>bold</b>!';
   }])
-  ; 
+  ;
+  app.controller('GoEasyCtrl',['$scope','$localStorage','toaster',function ($scope,$localStorage,toaster) {
+    $scope.newOrder=false;
+    $scope.notices=$localStorage.notice;
+    $scope.chat={
+      audio:"/ihanc/hx/order.mp3",
+      id:"order"
+    };
+    $scope.push={
+      audio:"/ihanc/hx/push.mp3",
+      id:"push"
+    };
+    if($localStorage.channel!==null){
+      //$scope.goEasy.unsubscribe({channel:$localStorage.channel});
+      $scope.goEasy.subscribe({
+        channel: $localStorage.channel,
+        onMessage: function (message) {
+          if(angular.isUndefined($localStorage.notice)) $localStorage.notice=[];
+          $scope.notices=$localStorage.notice;
+          if(message.content.indexOf("新订单")>-1){
+              $scope.newOrder=true;
+              $localStorage.notice.push(message.content);
+             // document.addEventListener("mousemove",function (evt) {
+                //document.getElementById("order").muted=false;
+                console.log("play");
+                document.getElementById("order").play();
+              //});
+
+          }else if(message.content.indexOf("goEasyChannel:")>-1){
+             console.log("clear");
+             var i=message.content.split(":");
+             $scope.notices=$localStorage.notice;
+             if($scope.notices.length===0 && $scope.newOrder) $scope.newOrder=false;
+          }
+          else{
+            $localStorage.notice.push(message.content);
+            toaster.pop('success', message.content);
+            console.log("play");
+            document.getElementById("push").play();
+          }
+        }
+      });
+    }
+    $scope.clear=function () {
+      $scope.newOrder=false;
+      if (angular.isDefined($localStorage.notice)){$localStorage.notice=[];$scope.notices=[];$scope.newOrder=false;}
+    };
+    $scope.removeNotice=function (index) {
+      $localStorage.notice.splice(index,1);
+      $scope.goEasy.publish({
+        channel: $localStorage.channel,
+        message: "goEasyChannel:"+index
+      });
+    };
+
+  }]);
   app.controller('TypeaheadDemoCtrl', ['$scope', '$http','$interval', function($scope, $http, $interval) {
     $scope.weight=888.8;
     $scope.on=false;
@@ -340,7 +395,7 @@
           angular.element('#setting').removeClass("active");
           if($location.url()!=='/app/sale/sale') $state.go('app.sale.sale');
           $scope.$emit('loadOrderList',list);
-      }
+      };
       $scope.delOrder=function (list) {
           var myscope = $rootScope.$new();
           myscope.info=list.member_name+'的订单';

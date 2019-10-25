@@ -105,6 +105,9 @@ KqPdKDkCWPQjbpo=
             foreach ($auth as $value)
                 $data['role_auth'][$value['sys_name']] = true;
         }
+        $infoTable='hs_' . $user[0]['MDB'] . '.info';
+        $info=Db::table($infoTable)->find();
+        $data['ctel']=$info['ctel'];
         return json_encode($data);
     }
     public function getCode(){

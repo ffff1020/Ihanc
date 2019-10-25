@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/7/14 0014.
  */
-app.controller('DashBoardController', function ($scope,myhttp,$rootScope,$modal,$filter) {
+app.controller('DashBoardController', function ($scope,myhttp,$rootScope,$modal,$filter,$localStorage) {
     var now = new Date();
     now.setDate(now.getDate()+1);
     $scope.now1=$filter('date')(now,'yyyy-MM-dd');
@@ -36,7 +36,7 @@ app.controller('DashBoardController', function ($scope,myhttp,$rootScope,$modal,
                 }
 
             });
-    }
+    };
     $scope.query(1);
     $scope.show=function(type){
         var myscope = $rootScope.$new();
@@ -350,7 +350,7 @@ app.controller('CashMoreTodayController',function ($scope,myhttp,$modalInstance)
         $modalInstance.close();
     };
 });
-app.controller('CreditTodayController',function ($scope,myhttp,$modalInstance) {
+app.controller('CreditTodayController',function ($scope,myhttp,$modalInstance,$modal,$rootScope) {
     $scope.query=function (page) {
         if(!page){
             page=1;
@@ -377,6 +377,16 @@ app.controller('CreditTodayController',function ($scope,myhttp,$modalInstance) {
     $scope.ok = function () {
         $modalInstance.close();
     };
+    $scope.more=function (list) {
+        var myscope = $rootScope.$new();
+        myscope.member = list;
+        var modalInstance = $modal.open({
+            templateUrl: 'admin/sale/creditDetail.html',
+            controller: 'saleCreditDetailController',
+            size: 'lg',
+            scope: myscope
+        });
+    }
 });
 app.controller('SaleTodayController',function ($scope,myhttp,$modalInstance) {
     $scope.loading=true;
@@ -444,3 +454,4 @@ app.controller('receiveGoodsController',function ($scope,myhttp,$modalInstance) 
         $modalInstance.dismiss();
     }
 });
+

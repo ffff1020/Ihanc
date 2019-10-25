@@ -3,7 +3,7 @@
         <thead>
         <tr>
             <th>操作</th>
-            <th>商品名称</th>
+            <th>商品名称<a style="font-size:10px"> ? 提示已购商品</a></th>
             <th>数量&nbsp;&nbsp;&nbsp;<b>录入毛重:<input type="checkbox" ng-model="show_numbers"></b></th>
             <th>单位</th>
             <th>销售价格</th>
@@ -14,7 +14,7 @@
         </thead>
         <tbody>
         <tr ng-repeat="row in rows track by $index" >
-            <td><i class="fa fa-trash-o text-error" ng-click="delRow($index)"></i>&nbsp;&nbsp;<i class="icon-plus text-info" ng-click="addRow()"></i></td>
+            <td><b class="label bg-primary pull-left ">{{$index+1}}</b> &nbsp;<i class="fa fa-trash-o text-error" ng-click="delRow($index)"></i>&nbsp;&nbsp;<i class="icon-plus text-info" ng-click="addRow()"></i></td>
             <td>
                 <ui-select ng-model="rows[$index].good" on-select="getUnit($item,$index)"  class="inline" style="width:160px" >
                     <ui-select-match >{{$select.selected.goods_name}}</ui-select-match>
@@ -23,7 +23,7 @@
                                        refresh-delay="0"
                                        minimum-input-length="1"
                                        position="auto">
-                        <div ng-bind-html="good.goods_name"></div>
+                        <div ng-bind-html="good.goods_name"  ng-class="{'text-success':good.sale_id>0}"></div>
                     </ui-select-choices>
                 </ui-select>
             </td>
@@ -63,6 +63,7 @@
         </tr>
         </tfoot>
     </table>
+
     <hr style=" height:2px;border:none;border-top:2px dotted #185598;" />
     <div class="inline col-sm-3">
         <div class=" text-left">

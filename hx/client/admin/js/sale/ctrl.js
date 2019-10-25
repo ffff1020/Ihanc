@@ -92,7 +92,9 @@ app.controller('SaleController',function ($scope,myhttp,toaster,ngDialog,$state,
         $scope.units=$localStorage.purchaseInfo.units;
         $scope.pay.bank=$localStorage.purchaseInfo.bank[0].bank_id;
     }
-
+    window.onbeforeunload =function(e){
+        return e.returnValue=("确定关闭销售页面吗？");
+    };
     if(angular.isDefined($localStorage['member'].sale_id)){
         $scope.rows=[];
         myhttp.getData('/index/sale/orderDetail','GET',{sale_id:$localStorage['member'].sale_id}).then(function (res) {
@@ -145,7 +147,7 @@ app.controller('SaleController',function ($scope,myhttp,toaster,ngDialog,$state,
         });
     }
     $scope.query_member=function (search) {
-        if(search!='')
+        if(search!=='')
             myhttp.getData('/index/sale/memberSearch', 'GET', {page: 1, search: search})
                 .then(function (res) {
                     $scope.members = res.data.member;
@@ -172,7 +174,7 @@ app.controller('SaleController',function ($scope,myhttp,toaster,ngDialog,$state,
     $scope.goods=[];
     $scope.query_goods=function (search) {
         if(search!=='') {
-            myhttp.getData('/index/setting/goodsQuery', 'GET', {search: search})
+            myhttp.getData('/index/setting/goodsQuery', 'GET', {search: search,member_id:$scope.data.member.member_id})
                 .then(function (res) {
                     $scope.goods = res.data;
                 });
@@ -343,12 +345,12 @@ app.controller('SaleController',function ($scope,myhttp,toaster,ngDialog,$state,
                 index++;
                // $scope.rows[index].goods=null;
                 angular.element('#'+$scope.tIndex+' tbody tr:eq(' + index + ') td:eq(1) ').find('input').focus();
-                if(index==0) $scope.save(1);
+                if(index===0) $scope.save(1);
             },200,false);
 
         }
-        if(keycode==42) $timeout(function () {angular.element('#'+$scope.tIndex+'paid_sum').focus();},200,false);
-        if(keycode==32) $timeout(function () {
+        if(keycode===42) $timeout(function () {angular.element('#'+$scope.tIndex+'paid_sum').focus();},200,false);
+        if(keycode===32) $timeout(function () {
             var weight=angular.element('#weight').val();
             //angular.element('#'+$scope.tIndex+'number'+index).val(weight);
             $scope.rows[index].number=weight;$scope.cal(index);
@@ -526,7 +528,6 @@ app.controller('SaleController',function ($scope,myhttp,toaster,ngDialog,$state,
          }
     }
     $scope.order=function () {
-
         if($scope.data.member===''){toaster.pop('info','请输入客户');return false;}
         var detail=[];
         var rowcheck=false;

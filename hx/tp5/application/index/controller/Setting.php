@@ -99,12 +99,21 @@ class Setting
     }
     public function goodsQuery(){
         $goodsTable=$this->mdb.'.goods';
-        $rs = Db::table($goodsTable)
-            ->where('goods_name|goods_sn','like','%'.$_GET['search'].'%')
-            ->field('goods_id,goods_name,unit_id,promote,warn_stock,is_order,time,out_price')
-            ->orderRaw('LENGTH(goods_sn) ')
-            ->page(1,8)
-            ->select();
+        if(isset($_GET['member_id']) && strstr($_GET['search'],'?')){
+            $search=str_replace('?','',$_GET['search']);
+            $query="SELECT c.goods_id,goods_name,c.unit_id,promote,warn_stock,is_order,c.time,out_price,a.sale_id"
+                ." FROM `".$this->mdb."`.`goods` `c` LEFT JOIN `".$this->mdb."`.`sale_detail` `b` ON `c`.`goods_id`=`b`.`goods_id` LEFT JOIN"
+                ."(SELECT * from `".$this->mdb."`.`sale_all` where `member_id`=".$_GET['member_id'].") `a` on `a`.sale_id=`b`.sale_id WHERE ( `goods_name` LIKE '%".$search."%' OR `goods_sn` LIKE '%".$search."%' ) group by `c`.`goods_id` order by a.sale_id DESC,LENGTH(goods_sn) LIMIT 0,8";
+           // return $query;
+            $rs=Db::query($query);
+        }else {
+            $rs = Db::table($goodsTable)
+                ->where('goods_name|goods_sn', 'like', '%' . $_GET['search'] . '%')
+                ->field('goods_id,goods_name,unit_id,promote,warn_stock,is_order,time,out_price')
+                ->orderRaw('LENGTH(goods_sn) ')
+                ->page(1, 8)
+                ->select();
+        }
         return json_encode($rs);
     }
     public function goodsCheck(){

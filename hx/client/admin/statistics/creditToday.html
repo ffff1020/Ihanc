@@ -7,12 +7,14 @@
         <tr>
             <th>客户</th>
             <th>金额</th>
+            <th>操作</th>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="list in data.lists" >
             <td>{{list.member_name}}</td>
             <td>{{list.sum|currency:'￥'}}</td>
+            <td><a ng-click="more(list)"><i class=" icon-magnifier" ></i></a></td>
         </tr>
         </tbody>
     </table>

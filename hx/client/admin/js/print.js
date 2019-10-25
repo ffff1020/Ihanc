@@ -1,7 +1,7 @@
 ﻿/**
  * Created by Administrator on 2017/6/17 0017.
  */
-app.controller('printSaleCreditController',function ($scope,$stateParams,myhttp,$filter) {
+app.controller('printSaleCreditController',function ($scope,$stateParams,myhttp,$filter,$localStorage,$timeout) {
     var check=!!window.ActiveXObject || "ActiveXObject" in window;
     $scope.nostyle={'margin-top':"0px"};
     if(check===false){
@@ -28,6 +28,7 @@ app.controller('printSaleCreditController',function ($scope,$stateParams,myhttp,
                 window.open('vendor/jatoolsPrinter_free.zip','_self');
             }
         }else {
+
             window.print();
             window.close();
         }
@@ -112,10 +113,14 @@ app.controller('printSaleCreditController',function ($scope,$stateParams,myhttp,
                 $scope.pages=new Array(0);
                 $scope.pages.push(res.data.credit);
                 $scope.pNum=1;
+
             }
             $scope.$on('ngRepeatFinished', function() {
-                $scope.doPrint();
-                $localStorage.summary="";
+                $timeout(function(){
+                    $scope.doPrint();
+                    $localStorage.summary="";
+                },500);
+
             });
         });
 });
@@ -203,7 +208,7 @@ app.controller('printSaleController',function ($scope,$stateParams,myhttp,$local
                     //console.log($scope.pages);
                     $scope.pNum=1;
                 }
-                $scope.printTel=$localStorage.tel===false?false:true;
+                $scope.printTel=$localStorage.tel !== false;
                 $scope.tel=$localStorage.tel;
                // alert($scope.tel);
                 $scope.$on('ngRepeatFinished', function () {
